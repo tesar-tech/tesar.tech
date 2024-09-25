@@ -2,6 +2,8 @@
 title:  Custom Accelerators (Library and XAML control for keyboard ⌨ shortcuts customization)
 published: 2020-06-19
 tags: [dotnet, xaml, uwp,csharp , programming]
+lead: "Customizable XAML control for managing shortcut configuration."
+
 ---
 <img src="media/vdp_changing_shortcuts.gif" width="500">
 

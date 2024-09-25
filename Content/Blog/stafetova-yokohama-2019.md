@@ -2,6 +2,7 @@
 title: Štafetová Yokohama 2019 
 published: 2019-05-15
 tags:   [running,štafeta]
+lead: "V půlce května se v japonské Jokohamě uskutečnilo Mistrovství světa štafet. Po diskvalifikaci amerického týmu získala česká štafeta 10. místo."
 ---
 
 V půlce května se v japonské Jokohamě uskutečnilo Mistrovství světa štafet. Nakonec – po diskvalifikaci Američanů – jsme urvali 10. místo, které nám zajistilo účast na říjnovém Mistrovství světa v Doha.

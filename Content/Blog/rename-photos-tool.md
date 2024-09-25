@@ -2,6 +2,8 @@
 title: Rename photos tool
 published: 2020-05-25
 tags: [dotnet, powershell, programming]
+lead: "dotnet global tool that helps renaming my photos by EXIF date taken metadata. It streamlines the photo organization process."
+
 ---
 
 I made a simple dotnet global tool that helps renaming my photos by EXIF date taken metadata.
