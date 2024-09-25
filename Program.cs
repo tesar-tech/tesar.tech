@@ -36,7 +36,8 @@ app.Run();
 
 public static class WebsiteKeys
 {
-    public const string GitHubRepo = "https://github.com/tesar-tech/tesar-tech.github.io";
+    public const string GitHubMe = "https://github.com/tesar-tech/";
+    public const string GitHubRepo = $"{GitHubMe}tesar-tech.github.io";
     public const string X = "https://x.com/";
     public const string Title = "Jan Tesař";
     public const string BlogPostStorageAddress = $"{GitHubRepo}/tree/main/Content/Blog";
