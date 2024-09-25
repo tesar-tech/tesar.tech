@@ -1,12 +1,11 @@
 @using System.Globalization
-@using Markdig
 @using BlazorStatic
 @using BlazorStatic.Services
 @inject BlazorStaticContentService<BlogFrontMatter> blazorStaticContentService
 @inject BlazorStaticService blazorStaticService
 
-<ul class="divide-y   divide-gray-700">
-        @foreach (var post in posts )
+<ul class="divide-y divide-gray-700">
+        @foreach (var post in posts.OrderByDescending(x=>x.FrontMatter.Published) )
         {
             <li class="py-12">
                 <article>

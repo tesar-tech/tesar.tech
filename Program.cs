@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.UseStaticWebAssets();
 
 builder.Services.AddBlazorStaticService(opt => {
+    opt.HotReloadEnabled = true;
     opt.IgnoredPathsOnContentCopy.Add("app.css");//pre-build version for tailwind
 }
 ).AddBlazorStaticContentService<BlogFrontMatter>();
@@ -35,10 +36,10 @@ app.Run();
 
 public static class WebsiteKeys
 {
-    public const string GitHubRepo = "https://github.com/tesar-tech/blazorStaticMinimalBlog";
+    public const string GitHubRepo = "https://github.com/tesar-tech/tesar-tech.github.io";
     public const string X = "https://x.com/";
-    public const string Title = "BlazorStatic Minimal Blog";
+    public const string Title = "Jan Tesař";
     public const string BlogPostStorageAddress = $"{GitHubRepo}/tree/main/Content/Blog";
-    public const string BlogLead = "Sample blog created with BlazorStatic and TailwindCSS";
+    public const string BlogLead = "High performance in sport and programming";
 
 }
