@@ -1,0 +1,84 @@
+﻿@using System.Globalization
+<article>
+    <div>
+        <header class="pt-6">
+            <div class="gap-2 text-center">
+                @if (Published != null)
+                {
+
+                    <dl>
+                        <div>
+                            <dt class="sr-only">Published on</dt>
+                            <dd class="text-base font-medium leading-6 text-gray-400">
+                                <time datetime="@Published.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffK", CultureInfo.InvariantCulture)">
+                                    @Published.Value.ToString("MMMM d, yyyy", new CultureInfo("en-US"))
+                                </time>
+                            </dd>
+                        </div>
+                    </dl>
+                }
+                <div class="prose prose-invert mx-auto">
+                    <h1>@Title</h1>
+                </div>
+                @if (Tags != null && TagsPageUrl != null)
+                {
+
+                    <div class="my-4 flex gap-1 items-center justify-center">
+                        <div class="text-sm text-gray-500">
+                            &lt;tags&gt;
+                        </div>
+                        <div class="flex flex-wrap gap-1 items-center justify-center">
+                            @foreach (var tag in Tags)
+                            {
+                                <a class="text-primary-500 hover:text-primary-400 text-sm font-medium uppercase" href="@TagsPageUrl/@tag">@tag</a>
+                            }
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            &lt;/tags&gt;
+                        </div>
+                    </div>
+                }
+            </div>
+        </header>
+        <div class="grid-rows-[auto_1fr] divide-y divide-gray-700">
+            @if (Authors != null)
+            {
+                <dl class="sr-only">Authors</dl>
+                <dd>
+                    <ul class="flex flex-wrap justify-center gap-4 sm:space-x-12">
+                        @Authors
+                    </ul>
+                </dd>
+            }
+            <div class="prose prose-invert max-w-none pb-8 pt-10">
+                @((MarkupString)HtmlContent)
+                @if (ArticleTail != null)
+                {
+                    @ArticleTail
+                }
+            </div>
+            @if (FileName != null)
+            {
+                <div class="pb-6 pt-6 text-sm text-gray-300">
+                    <a target="_blank" rel="noopener noreferrer" href="@($"{WebsiteKeys.BlogPostStorageAddress}/{FileName}")">View on GitHub</a>
+                </div>
+            }
+            <footer>
+                <div class="pt-4 xl:pt-8 ">
+                    <a class="text-primary-500 hover:text-primary-400" aria-label="Back to the home" href="">← Back to the home</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</article>
+
+@code {
+    [Parameter, EditorRequired] public string HtmlContent { get; set; } = null!;
+    [Parameter, EditorRequired] public string Title { get; set; } = null!;
+    [Parameter] public string? FileName { get; set; }
+    [Parameter] public IEnumerable<string>? Tags { get; set; }
+    [Parameter] public string? TagsPageUrl { get; set; }
+    [Parameter] public DateTime? Published { get; set; }
+    [Parameter] public RenderFragment? Authors { get; set; }
+    [Parameter] public RenderFragment? ArticleTail { get; set; }
+}

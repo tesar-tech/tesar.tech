@@ -1,0 +1,40 @@
+﻿@page "/video-detail-player/{filename}"
+@using BlazorStatic
+@using BlazorStatic.Services
+@inject BlazorStaticContentService<VdpFrontMatter> blazorStaticContentService
+
+@* text-black *@
+@if (post == null)
+{
+    <div>Post not found 🤷 </div>
+    return;
+}
+<Article Title="@post.FrontMatter.Title"
+         HtmlContent="@post.HtmlContent"
+         Tags="@post.FrontMatter.Tags" FileName="@FileName">
+    <ArticleTail>
+        @if (FileName?.Contains("intro") == true)
+        {
+        <ContactForm SuccessMessage="@post.FrontMatter.SuccessMessage"
+                     EmailText="@post.FrontMatter.EmailText"
+                     MessageText="@post.FrontMatter.MessageText"
+                     LegendText="@post.FrontMatter.LegendText"
+                     SendText="@post.FrontMatter.SendText"
+                     />
+        }
+    </ArticleTail>
+</Article>
+
+
+
+@code {
+
+
+    [Parameter] public string? FileName { get; set; } = "into_en";
+    Post<VdpFrontMatter>? post;
+    protected override void OnInitialized()
+    {
+        if (string.IsNullOrWhiteSpace(FileName)) return;
+        post = blazorStaticContentService.BlogPosts.FirstOrDefault(x => x.Url == FileName);
+    }
+}

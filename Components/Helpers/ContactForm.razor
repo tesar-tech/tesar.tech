@@ -1,0 +1,42 @@
+﻿<form action="https://formspree.io/f/xvgpegrj" method="POST">
+    <fieldset>
+        <legend>@LegendText</legend><br>
+        @EmailText<br>
+        <input class="text-neutral-500" type="email" name="mail"><br>
+        @MessageText<br>
+        <textarea class="text-neutral-500" rows="4" cols="50" name="message"></textarea><br>
+        <button class="bg-violet-500 hover:bg-violet-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 dark:bg-violet-700 dark:hover:bg-violet-800">
+            @SendText
+        </button>
+
+    </fieldset>
+</form>
+
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action, true);
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                form.reset();
+                alert('@SuccessMessage');
+            } else {
+                alert('Sorry, there was an error. Please try again later.');
+            }
+        };
+        xhr.send(formData);
+    });
+</script>
+
+@code {
+    [Parameter] public string SuccessMessage { get; set; } = "";
+    [Parameter] public string EmailText { get; set; } = "";
+    [Parameter] public string MessageText { get; set; } = "";
+    [Parameter] public string LegendText { get; set; } = "";
+    [Parameter] public string SendText { get; set; } = "";
+}
