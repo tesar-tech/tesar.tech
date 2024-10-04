@@ -27,14 +27,6 @@ jobs:
           cd ${{ env.WEBAPP_PATH }}
           tailwindcss --input ./wwwroot/app.css  --output ./wwwroot/app.min.css  --minify
     
-      - name: Change <base href="" /> in App.razor to match GitHub repo name
-        run: |
-          REPO_NAME=$(echo "${{ github.repository }}" | awk -F '/' '{print $NF}')
-          if [[ "$REPO_NAME" != *.github.io ]]; then
-            sed -i 's|<base href="/" />|<base href="/'$REPO_NAME'/" />|g' ${{ env.WEBAPP_PATH }}/Components/App.razor
-          fi
-
-
       - run: touch ${{ env.WEBAPP_PATH }}/wwwroot/.nojekyll #folder starting with _ are handled as jekyll. This file will prevent that.  
       - name: Run webapp and generate static files
         run: |
