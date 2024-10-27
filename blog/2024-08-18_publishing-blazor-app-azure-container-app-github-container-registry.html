@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link rel="stylesheet" href="app.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%237c3aed%22>ᚱᚢ</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css"></head>
+
+<body class="bg-gray-950 font-tomorrow text-gray-200"><div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 "><div class="flex h-screen flex-col justify-between"><header class="flex items-center justify-between py-10"><div><a href><div class="flex flex-col items-start justify-between gap-4"><div class=" h-6 text-2xl font-semibold sm:block text-primary-800">Jan Tesa&#x159;</div>
+                <div class="italic text-sm text-gray-400">High performance in sport and programming</div></div></a></div>
+    <div class="flex items-center space-x-4 leading-5 sm:space-x-6"><a href="" class="hidden font-medium text-gray-100 sm:block">Home 
+                            </a><a href="tags" class="hidden font-medium text-gray-100 sm:block">Tags 
+                            </a><a href="https://github.com/tesar-tech/" class="hidden font-medium text-gray-100 sm:block"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a><button id="toggle-button" aria-label="Toggle Menu" class="sm:hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-8 w-8 text-gray-100"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg></button>
+        <div id="mobile-menu" class="fixed left-0 top-0 z-10 h-full w-full translate-x-full transform   duration-300 ease-in-out bg-gray-950 opacity-[0.98]"><div class="flex justify-end"><button id="close-mobile-menu-button" class="mr-8 mt-11 h-8 w-8" aria-label="Toggle Menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-100"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div>
+            <nav class="fixed mt-8 h-full"><div class="px-12 py-4"><a href="" class="text-2xl font-bold tracking-widest text-gray-100">Home
+                            </a></div><div class="px-12 py-4"><a href="tags" class="text-2xl font-bold tracking-widest text-gray-100">Tags
+                            </a></div><div class="px-12 py-4"><a href="https://github.com/tesar-tech/" class="text-2xl font-bold tracking-widest text-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></div></nav></div></div></header>
+<script>
+//👎 but what can I do? It's a static html. I can't use C# here.
+ const toggleMobileMenu = () => document.querySelector('#mobile-menu').classList.toggle('translate-x-full');
+ 
+ document.querySelector('#toggle-button').addEventListener('click', toggleMobileMenu);
+ document.querySelector('#close-mobile-menu-button').addEventListener('click', toggleMobileMenu);
+</script>
+
+        <main class="mb-auto"><article><div><header class="pt-6"><div class="gap-2 text-center"><dl><div><dt class="sr-only">Published on</dt>
+                            <dd class="text-base font-medium leading-6 text-gray-400"><time datetime="2024-10-18T00:00:00.000">October 18, 2024</time></dd></div></dl><div class="prose prose-invert mx-auto"><h1>Publish Blazor App to Azure Container with GitHub Registry</h1></div></div></header>
+        <div class="grid-rows-[auto_1fr] divide-y divide-gray-700"><div class="prose prose-invert max-w-none pb-8 pt-10"><blockquote>
+<p>This article was initially written for <a href="https://blazorise.com/blog/publishing-blazor-app-azure-container-app-github-container-registry">Blazorise Blog</a>.</p>
+</blockquote>
+<p>This article aims to guide you through a cost-effective solution for hosting a single ASP.NET Core app on Azure Container Apps. By the end, we will have set up a CI/CD pipeline using GitHub Actions to build the app as a container, push it to the GitHub Container Registry (GHCR), and configure Azure Container Apps to pull and deploy the image.</p>
+<p>We will cover all the necessary steps.</p>
+<p>There are multiple ways to deploy to Azure. We will discuss a few options but focus primarily on a vendor-agnostic solution—one that does not depend on any specific IDE and can easily be adapted for other cloud providers or hosting environments.</p>
+<h2 id="creating-the-app">Creating the App</h2>
+<p>Start by creating a .NET 8 Blazor project using the following command:</p>
+<pre><code class="language-bash">dotnet new blazor --empty -o AzureContainerAppTest
+</code></pre>
+<p>Next, you'll need a <code>Dockerfile</code> to containerize your app. It can be easily generated by your IDE. In Visual Studio, right-click the project and select <strong>Add</strong> -&gt; <strong>Docker Support</strong>. In JetBrains Rider, go to <strong>Add</strong> -&gt; <strong>Dockerfile</strong>.</p>
+<p>Your <code>Dockerfile</code> should look something like this:</p>
+<pre><code class="language-dockerfile">FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER app
+WORKDIR /app
+EXPOSE 8080
+
+# This stage is used to build the service project
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY [&quot;AzureContainerAppTest.csproj&quot;, &quot;.&quot;]
+RUN dotnet restore &quot;./AzureContainerAppTest.csproj&quot;
+COPY . .
+WORKDIR &quot;/src/.&quot;
+RUN dotnet build &quot;./AzureContainerAppTest.csproj&quot; -c $BUILD_CONFIGURATION -o /app/build
+
+# This stage is used to publish the service project to be copied to the final stage
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish &quot;./AzureContainerAppTest.csproj&quot; -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT [&quot;dotnet&quot;, &quot;AzureContainerAppTest.dll&quot;]
+</code></pre>
+<p>Once your Dockerfile is ready, push the project to a private GitHub repository. A private repository will help us explore how to handle authorization for pulling the container image from GitHub. Of course, a public repository will also work, but using a private one adds a layer of security.</p>
+<h2 id="creating-the-app-on-azure">Creating the App on Azure</h2>
+<p>We will use the Azure Portal to create the container app. Alternatively, you could do this through the Azure CLI or directly from the Visual Studio Publish wizard.</p>
+<ol>
+<li><p>Go to the Azure Portal and search for <strong>Container Apps</strong>.</p>
+</li>
+<li><p>Click <strong>Create</strong> and fill in the form, similar to the screenshot below:</p>
+<p><img src="Content/Blog/media/2024-08-18_publishing-blazor-app-azure-container-app-github-container-registry/img-18.png" alt="Container App Creation" /></p>
+</li>
+</ol>
+<p>For this tutorial, I’ve created a dedicated resource group called <code>testingRG</code>.</p>
+<p>During the process, you’ll need to create a <strong>Container Apps Environment</strong>. Just click <code>New</code>, provide a name, and leave the default options. This environment acts as the hosting environment for containerized apps, and we won't modify it in this tutorial.</p>
+<ol start="3">
+<li><p>In the <strong>Resources</strong> section, adjust the resource allocation to <strong>0.25 CPU</strong> and <strong>0.5 GB</strong> of memory. This keeps costs down. You can scale these settings later if needed.</p>
+<p><img src="Content/Blog/media/2024-08-18_publishing-blazor-app-azure-container-app-github-container-registry/img-17.png" alt="Resource Allocation" /></p>
+</li>
+<li><p>Check the <code>Use quickstart image</code> option. This will deploy a basic container image, letting us focus on setting up the pipeline to deploy our Blazor app later.</p>
+</li>
+</ol>
+<p>After you finish these steps, click <strong>Create</strong> to deploy your new app. Once it’s ready, you can go to the resource and click on the <strong>Application URL</strong> to verify that the app is running. You should see a default &quot;Hello World&quot; message from the quick start image.</p>
+<p>Next, we’ll configure the deployment of our custom Blazor app.</p>
+<h2 id="cicd-pipeline-github-actions">CI/CD Pipeline (GitHub Actions)</h2>
+<p>The goal of this step is to create a GitHub Actions pipeline that will build the Docker image for our Blazor app, push it to GitHub Container Registry (GHCR), and deploy it to Azure Container Apps.</p>
+<p>Below is the full <code>.yml</code> file for the GitHub Actions workflow. I will explain the individual parts afterward.</p>
+<pre><code class="language-yml">name: Build and deploy .NET application to Azure Container App using GHCR
+on:
+  push:
+    branches:
+      - master
+
+env:
+  CONTAINER_APP_NAME: azurecontainerapptest3 # name we set up in azure portal
+  RESOURCE_GROUP: testingRG # azure resource group
+  CONTAINER_REGISTRY_SERVER: ghcr.io # using github container registry
+  DOCKER_FILE_PATH: ./Dockerfile # where our docker file is located
+  PACKAGE_NAME: azurecontainerapptest/containertest #package name on ghcr.io.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write #need to setup the permission to create packages
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.CONTAINER_REGISTRY_SERVER }}
+          username: ${{ github.actor }} #github username
+          password: ${{ secrets.GITHUB_TOKEN }} # github token from secrets
+
+      - name: Build and push container image to GHCR
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ${{ env.CONTAINER_REGISTRY_SERVER }}/${{ github.actor }}/${{ env.PACKAGE_NAME }}:${{ github.sha }} 
+          file: ${{ env.DOCKER_FILE_PATH }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+   
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURECONTAINERAPPTEST3_SPN }} # Stored secret for Azure login
+
+      - name: Update container app
+        uses: azure/CLI@v2
+        with:
+            inlineScript: |
+                az config set extension.use_dynamic_install=yes_without_prompt 
+
+                az containerapp update --name ${{ env.CONTAINER_APP_NAME }} \ 
+                --resource-group ${{ env.RESOURCE_GROUP }} \
+                --image ${{ env.CONTAINER_REGISTRY_SERVER }}/${{ github.actor }}/${{ env.PACKAGE_NAME }}:${{ github.sha }} \
+
+      - name: Logout
+        run: az logout
+</code></pre>
+<h3 id="package_name">PACKAGE_NAME</h3>
+<pre><code class="language-yml">env:
+  PACKAGE_NAME: azurecontainerapptest/containertest #package name on ghcr.io.
+</code></pre>
+<p><code>PACKAGE_NAME</code> is the identifier for the Docker image in GitHub Container Registry (GHCR). Since GitHub Packages uses the term &quot;package&quot; broadly (it can refer to NuGet packages, ZIP files, or container images), we're defining the repository (<code>azurecontainerapptest</code>) and the specific image (<code>containertest</code>). This variable is used throughout the workflow to ensure consistent naming for the image.</p>
+<h3 id="building-and-pushing-the-container-image">Building and Pushing the Container Image</h3>
+<pre><code class="language-yml">uses: docker/build-push-action@v5
+with:
+  push: true
+  tags: ${{ env.CONTAINER_REGISTRY_SERVER }}/${{ github.actor }}/${{ env.PACKAGE_NAME }}:${{ github.sha }} 
+  file: ${{ env.DOCKER_FILE_PATH }}
+</code></pre>
+<p>In this step, we are specifying the Dockerfile to containerize the Blazor app and using the <code>tags</code> parameter to name the container image. The image will be available at a location like <code>ghcr.io/username/azurecontainerapptest/containertest:e446edd16995a225d60482ab21bd55bbac88623a</code>, where <code>username</code> is your GitHub account name and <code>e446edd16995a225d60482ab21bd55bbac88623a</code> is the Git commit SHA.</p>
+<h3 id="azure-login">Azure Login</h3>
+<pre><code class="language-yml">  uses: azure/login@v2
+  with:
+    creds: ${{ secrets.AZURECONTAINERAPPTEST3_SPN }}
+</code></pre>
+<p>Here we log in to Azure using credentials stored in GitHub secrets. You must generate these credentials on Azure and then store them in GitHub, as described below.</p>
+<h4 id="generate-secret">Generate secret</h4>
+<p>On your local machine (or in the Azure Portal), run the following command to generate a service principal with the appropriate permissions. This assumes the <a href="https://learn.microsoft.com/en-us/cli/azure/">Azure CLI</a> is installed.</p>
+<pre><code class="language-bash">az ad sp create-for-rbac --name azurecontainerapptest3 --role contributor --scopes /subscriptions/--your-subscription-id--/resourceGroups/testingRG/providers/Microsoft.App/containerApps/azurecontainerapptest3 /subscriptions/--your-subscription-id--/resourceGroups/testingRG/providers/Microsoft.App/managedEnvironments/AzureContainerAppTest --json-auth
+</code></pre>
+<p>The three variables here are:</p>
+<ul>
+<li>the name of the container app: <code>azurecontainerapptest3</code> in my case</li>
+<li><code>--your-subscription-id--</code></li>
+<li><code>AzureContainerAppTest</code> as the environment we created together with the continer app</li>
+</ul>
+<p>You will get a JSON response similar to this:</p>
+<pre><code class="language-json">{
+  &quot;clientId&quot;: &quot;******&quot;,
+  &quot;clientSecret&quot;: &quot;********&quot;,
+  &quot;subscriptionId&quot;: &quot;yourSubscriptionId&quot;,
+  &quot;tenantId&quot;: &quot;yourTenantId&quot;,
+  &quot;activeDirectoryEndpointUrl&quot;: &quot;https://login.microsoftonline.com&quot;,
+  &quot;resourceManagerEndpointUrl&quot;: &quot;https://management.azure.com/&quot;,
+  &quot;activeDirectoryGraphResourceId&quot;: &quot;https://graph.windows.net/&quot;,
+  &quot;sqlManagementEndpointUrl&quot;: &quot;https://management.core.windows.net:8443/&quot;,
+  &quot;galleryEndpointUrl&quot;: &quot;https://gallery.azure.com/&quot;,
+  &quot;managementEndpointUrl&quot;: &quot;https://management.core.windows.net/&quot;
+}
+</code></pre>
+<h4 id="store-the-secret-on-github">Store the secret on GitHub</h4>
+<p>Take this JSON output and go to your GitHub repository:</p>
+<ol>
+<li>Navigate to <strong>Settings</strong> -&gt; <strong>Secrets and variables</strong> -&gt; <strong>Actions</strong>.</li>
+<li>Add a new secret and paste the JSON as the value.</li>
+</ol>
+<p>Use the secret name (e.g., <code>AZURECONTAINERAPPTEST3_SPN</code>) in the Azure login step.</p>
+<p><img src="Content/Blog/media/2024-08-18_publishing-blazor-app-azure-container-app-github-container-registry/img.png" alt="Adding Secret" /></p>
+<h3 id="update-container-app">Update container app</h3>
+<pre><code class="language-yml">uses: azure/CLI@v2
+with:
+    inlineScript: |
+        az config set extension.use_dynamic_install=yes_without_prompt 
+
+        az containerapp update --name ${{ env.CONTAINER_APP_NAME }} \ 
+        --resource-group ${{ env.RESOURCE_GROUP }} \
+        --image ${{ env.CONTAINER_REGISTRY_SERVER }}/${{ github.actor }}/${{ env.PACKAGE_NAME }}:${{ github.sha }} \
+</code></pre>
+<p>This command uses the Azure CLI to update the container app with the newly built image. The <code>--image</code> parameter points to the container image pushed to GHCR in the previous steps.</p>
+<p>Now, when you push your changes to the GitHub repository, the action will run the pipeline. However, there’s one more thing we need to handle—giving Azure access to the GHCR.</p>
+<h3 id="allowing-azure-to-access-github-packages">Allowing Azure to Access GitHub Packages</h3>
+<p>In order for Azure to pull the container image from GitHub Container Registry (GHCR), we need to grant it access by generating a Personal Access Token (PAT) from GitHub. Azure will use this PAT to authenticate against GHCR and pull the image.</p>
+<h4 id="generate-a-pat-personal-access-token">Generate a PAT (Personal Access Token)</h4>
+<ol>
+<li>Go to your GitHub account.</li>
+<li>Navigate to <strong>Settings</strong> -&gt; <strong>Developer settings</strong> -&gt; <strong>Personal access tokens</strong> -&gt; <strong>Tokens (classic)</strong>.</li>
+<li>Generate a new token with the <code>read:packages</code> permission.</li>
+</ol>
+<blockquote>
+<p>Note: As of now, GitHub's fine-grained access tokens do not support package access, so you will need to use a classic PAT.</p>
+</blockquote>
+<p>Once the token is generated, you will see it displayed only once, so make sure to copy the token.</p>
+<h4 id="configure-azure-to-use-the-pat">Configure Azure to Use the PAT</h4>
+<p>Now, use the Azure CLI to set up access to the GitHub Container Registry using the generated PAT. Replace the values in the following command with your own:</p>
+<pre><code class="language-bash"> az containerapp registry set --name azurecontainerapptest3 --resource-group testingRG --server ghcr.io --username tesar-tech --password ghp_yourpat
+</code></pre>
+<p>In this command:</p>
+<ul>
+<li><code>--name</code> specifies the name of the Azure Container App.</li>
+<li><code>--resource-group</code> refers to the resource group where the app is deployed.</li>
+<li><code>--server</code> is set to <code>ghcr.io</code>, the GitHub Container Registry server.</li>
+<li><code>--username</code> should be your GitHub username.</li>
+<li><code>--password</code> is the PAT you just generated.</li>
+</ul>
+<h4 id="verify-the-secret-in-azure">Verify the Secret in Azure</h4>
+<p>Once the command is executed, the PAT is stored securely in Azure. You can verify this by navigating to your Azure Container App:</p>
+<ol>
+<li>Go to <strong>Settings</strong> -&gt; <strong>Secrets</strong>.</li>
+<li>You should see the registry credentials stored there.</li>
+</ol>
+<p>This setup allows Azure to authenticate with GHCR and pull the container image during deployment.</p>
+<h4 id="final-steps-to-resolve-port-mismatch">Final Steps to Resolve Port Mismatch</h4>
+<p>At this stage, the pipeline should run successfully, but the app might not work immediately due to a port mismatch. The error typically looks like:</p>
+<blockquote>
+<p>&quot;The TargetPort 80 does not match the listening port 8080.&quot;</p>
+</blockquote>
+<p>To fix this:</p>
+<ol>
+<li>Go to your Azure Container App in the portal.</li>
+<li>Navigate to <strong>Settings</strong> -&gt; <strong>Ingress</strong>.</li>
+<li>Change the <strong>TargetPort</strong> to <code>8080</code> to match the port exposed in your Dockerfile.</li>
+</ol>
+<p><img src="Content/Blog/media/2024-08-18_publishing-blazor-app-azure-container-app-github-container-registry/img-1.png" alt="Port Mismatch Fix" /></p>
+<p>Once updated, your app should now be running. You can verify this by going to <strong>Overview</strong> -&gt; <strong>Application URL</strong> to check the live version of your app.</p>
+<p><img src="Content/Blog/media/2024-08-18_publishing-blazor-app-azure-container-app-github-container-registry/img-3.png" alt="App Running" /></p>
+<h2 id="scaling-to-0-replicas">Scaling to 0 Replicas</h2>
+<p>By default, even if you're not using your Azure Container App, you will incur costs. Running an app with the lowest resource settings (0.25 CPU and 0.5 GB RAM) costs approximately €5 per month, even during idle times. To avoid unnecessary charges when the app is not in use, you can scale the app down to 0 replicas.</p>
+<p>When scaled to 0 replicas, the app will automatically turn off when idle and only spin up when there is traffic. This can be useful for testing or development environments where the app doesn't need to be constantly running. However, this configuration is not suitable for production since it adds a delay when traffic first hits the app, as the container needs to start up again.</p>
+<p>From experience, the cold start time for an app scaling from 0 replicas usually takes around <strong>20-30 seconds</strong>, depending on the size and complexity of the container image (<a href="https://github.com/microsoft/azure-container-apps/issues/997">source</a>). For a simple Blazor app, the startup time should be about <strong>20 seconds</strong>. Additionally, after <strong>5 minutes</strong> of inactivity (the default idle timeout), the app will scale back down to 0 replicas (<a href="https://azureway.cloud/azure-container-apps-scaling-part-3/">source</a>).</p>
+<p>To configure scaling to 0 replicas:</p>
+<ol>
+<li>Go to your Azure Container App in the portal.</li>
+<li>Navigate to <strong>Scale</strong> in the side menu.</li>
+<li>Set the <strong>Minimum replicas</strong> to <code>0</code> and <strong>Maximum replicas</strong> to your desired value (for example, <code>1</code>).</li>
+</ol>
+<p><img src="Content/Blog/media/2024-08-18_publishing-blazor-app-azure-container-app-github-container-registry/img-14.png" alt="Scale Settings" /></p>
+<p>By doing this, the app will scale down to 0 replicas during periods of inactivity, and Azure will automatically bring it back online when traffic hits.</p>
+<p>This feature is an excellent way to save costs during development or testing phases without affecting the ability to scale back up when necessary.</p>
+</div><div class="pb-6 pt-6 text-sm text-gray-300"><a target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/tesar.tech/tree/main/Content/Blog/2024-08-18_publishing-blazor-app-azure-container-app-github-container-registry">View on GitHub</a></div><footer><div class="pt-4 xl:pt-8 "><a class="text-primary-500 hover:text-primary-400" aria-label="Back to the home" href>← Back to the home</a></div></footer></div></div></article></main>
+
+        <footer><div class="mt-16 flex flex-col items-center"><div class="mb-3 flex space-x-4"><a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/"><span class="sr-only">github</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
+                    <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://x.com/"><span class="sr-only">x</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path></svg></a></div>
+                <div class="mb-2 flex space-x-2 text-sm text-gray-400"><a target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/blazorStatic"> Built with Blazor Static</a>
+                    <div>•</div>
+                    <div>© 2024</div></div></div></footer></div></div>
+        </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script></html>

@@ -30,12 +30,87 @@
 </script>
 
         <main class="mb-auto"><article><div><header class="pt-6"><div class="gap-2 text-center"><dl><div><dt class="sr-only">Published on</dt>
-                            <dd class="text-base font-medium leading-6 text-gray-400"><time datetime="2020-06-19T00:00:00.000">June 19, 2020</time></dd></div></dl><div class="prose prose-invert mx-auto"><h1>Custom Accelerators (Library and XAML control for keyboard &#x2328; shortcuts customization)</h1></div></div></header>
-        <div class="grid-rows-[auto_1fr] divide-y divide-gray-700"><div class="prose prose-invert max-w-none pb-8 pt-10"><img src="Content/Blog/media/vdp_changing_shortcuts.gif" width="500">
-<p>I made this library to simplify keyboard shortcuts editing. It's working (for example in <a href="https://www.microsoft.com/en-us/p/video-detail-player/9p34ghb2h88r">Video Detail Player</a>), open sourced and available for other uwp apps via NuGet package.</p>
-<p>More information on github: <a href="https://github.com/tesar-tech/CustomAccelerators">https://github.com/tesar-tech/CustomAccelerators</a></p>
-<hr />
-</div><div class="pb-6 pt-6 text-sm text-gray-300"><a target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/tesar.tech/tree/main/Content/Blog/2020-06-19_custom-accelerators">View on GitHub</a></div><footer><div class="pt-4 xl:pt-8 "><a class="text-primary-500 hover:text-primary-400" aria-label="Back to the home" href>← Back to the home</a></div></footer></div></div></article></main>
+                            <dd class="text-base font-medium leading-6 text-gray-400"><time datetime="2024-10-27T00:00:00.000">October 27, 2024</time></dd></div></dl><div class="prose prose-invert mx-auto"><h1>NixOS - Autocomplete in the Terminal: Setting Up Zsh for a Streamlined Workflow</h1></div></div></header>
+        <div class="grid-rows-[auto_1fr] divide-y divide-gray-700"><div class="prose prose-invert max-w-none pb-8 pt-10"><p>The final result:</p>
+<p><img src="Content/Blog/media/2024-10-21_nix_os_zsh_autocomplete/zsh-final.webp" alt="alt text" /></p>
+<p>As a long-time Windows and PowerShell user, I had previously optimized my terminal setup with Windows Terminal, oh-my-posh, and the PSReadline tool to create a streamlined experience:</p>
+<p><img src="Content/Blog/media/2024-10-21_nix_os_zsh_autocomplete/ps-suggestions.webp" alt="alt text" /></p>
+<p>One feature I particularly enjoy is the ability to preview the folder to <em>cd</em> into when pressing ctrl+space:</p>
+<p><img src="Content/Blog/media/2024-10-21_nix_os_zsh_autocomplete/ps-cd-suggestions.webp" alt="alt text" /></p>
+<p>Now, I wanted to replicate a similar experience on a Linux machine—a task that’s not as straightforward. My motivation came from discovering NixOS’s powerful feature of reproducibility. With each setup and configuration captured in .nix files, I never lose my customized environment; it’s easy to reproduce and share.</p>
+<p>To get started, I used Home Manager for installation. Here’s a full, minimal example of <code>home.nix</code>:</p>
+<pre><code class="language-nix">{ config, pkgs, ... }:
+{
+  home.username = &quot;nixos&quot;;
+  home.homeDirectory = &quot;/home/nixos&quot;;
+
+  home.stateVersion = &quot;24.05&quot;; 
+
+  home.packages = with pkgs; [
+    oh-my-posh
+    git
+  ];
+
+  programs.zsh = {
+    enable = true;
+    plugins = [
+      {
+        name = &quot;zsh-autocomplete&quot;; # completes history, commands, etc.
+        src = pkgs.fetchFromGitHub {
+          owner = &quot;marlonrichert&quot;;
+          repo = &quot;zsh-autocomplete&quot;;
+          rev = &quot;762afacbf227ecd173e899d10a28a478b4c84a3f&quot;;
+          sha256 = &quot;1357hygrjwj5vd4cjdvxzrx967f1d2dbqm2rskbz5z1q6jri1hm3&quot;;
+        }; # e.g., nix-prefetch-url --unpack https://github.com/marlonrichert/zsh-autocomplete/archive/762afacbf227ecd173e899d10a28a478b4c84a3f.tar.gz
+      }
+    ];
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ &quot;z&quot; ];
+      extraConfig = ''
+                # Required for autocomplete with box: https://unix.stackexchange.com/a/778868
+                zstyle ':completion:*' completer _expand _complete _ignored _approximate _expand_alias
+                zstyle ':autocomplete:*' default-context curcontext 
+                zstyle ':autocomplete:*' min-input 0
+
+                setopt HIST_FIND_NO_DUPS
+
+                autoload -Uz compinit
+                compinit
+
+                setopt autocd  # cd without writing 'cd'
+                setopt globdots # show dotfiles in autocomplete list
+      '';
+    };
+
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    history = {
+      size = 10000;
+    };
+
+    # Extra configurations for Zsh
+    initExtra = ''
+      # Oh-My-Posh initialization for Zsh
+      eval &quot;$(oh-my-posh init zsh --config /mnt/c/Users/toted/OneDrive/prog/oh-my-posh/mytheme.omp.json)&quot;
+
+      # zsh-autocomplete
+      bindkey -M menuselect '^M' .accept-line # run code when selected completion
+        '';
+  };
+</code></pre>
+<p>Some important notes:</p>
+<ul>
+<li>I chose Zsh over Bash because of its support for an enhanced user experience, especially with dropdown menu-style autocomplete, which Bash lacks (<a href="https://unix.stackexchange.com/a/760480">source</a>).</li>
+<li>I installed <code>zsh-autocomplete</code> directly via Git rather than using zplug to ensure compatibility with how the final <code>.zshrc</code> is structured. Specifically, <code>oh-my-zsh</code> needs to be sourced before plugin configuration [<a href="https://github.com/marlonrichert/zsh-autocomplete/discussions/723">source</a>].</li>
+<li>My prompt styling relies on <code>oh-my-posh</code>, though you can customize it to suit your preferences. <code>oh-my-posh</code> is optional, but I already had it set up in my PowerShell profile, so I extended its use in my Linux setup.</li>
+<li>For navigating command history, simply press the up arrow key; otherwise, the default context is set to <code>curcontext</code>. If preferred, you can set it to display history first with <code>zstyle ':autocomplete:*' default-context history-incremental-search-backward</code>.</li>
+<li>Shortcut <code>cd ..</code> is handled by a terminal shortcut (not part of this script).</li>
+<li><code>setopt autocd</code> allows navigation into directories without explicitly typing <code>cd</code>.</li>
+<li>The <code>zsh-autocomplete</code> plugin also supports suggesting command parameters.</li>
+</ul>
+</div><div class="pb-6 pt-6 text-sm text-gray-300"><a target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/tesar.tech/tree/main/Content/Blog/2024-10-21_nix_os_zsh_autocomplete">View on GitHub</a></div><footer><div class="pt-4 xl:pt-8 "><a class="text-primary-500 hover:text-primary-400" aria-label="Back to the home" href>← Back to the home</a></div></footer></div></div></article></main>
 
         <footer><div class="mt-16 flex flex-col items-center"><div class="mb-3 flex space-x-4"><a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/"><span class="sr-only">github</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
