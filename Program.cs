@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.UseStaticWebAssets();
 
 builder.Services.AddBlazorStaticService(opt => {
-        opt.HotReloadEnabled = true;
         opt.IgnoredPathsOnContentCopy.Add("app.css");//pre-build version for tailwind
 
     }
@@ -46,7 +45,7 @@ app.Run();
 public static class WebsiteKeys
 {
     public const string GitHubMe = "https://github.com/tesar-tech/";
-    public const string GitHubRepo = $"{GitHubMe}tesar-tech.github.io";
+    public const string GitHubRepo = $"{GitHubMe}tesar.tech";
     public const string X = "https://x.com/";
     public const string Title = "Jan Tesař";
     public const string BlogPostStorageAddress = $"{GitHubRepo}/tree/main/Content/Blog";

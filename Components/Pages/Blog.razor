@@ -1,17 +1,17 @@
 ﻿@page "/"
 @page "/blog/{fileName}"
 @using BlazorStatic
-@using TesarTechWebsite.Components.Article
 @using BlazorStatic.Services
 @inject BlazorStaticContentService<BlogFrontMatter> blazorStaticContentService
 
 
 @* No filename -> show latest posts *@
 @if (string.IsNullOrWhiteSpace(FileName))
+@if (string.IsNullOrWhiteSpace(FileName))
 {
     <div class="divide-y divide-gray-700">
         <div class="space-y-2 pb-8 pt-6 md:space-y-5">
-            <h1 class="font md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">Latest posts</h1>
+            <h1 class="font md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl">Latest blog posts</h1>
             @* <p class="text-lg leading-7 text-gray-400 prose prose-invert">@WebsiteKeys.BlogLead</p> *@
         </div>
 
@@ -37,6 +37,6 @@
     protected override void OnInitialized()
     {
         if (string.IsNullOrWhiteSpace(FileName)) return;
-        post = blazorStaticContentService.BlogPosts.FirstOrDefault(x => x.Url == FileName);
+        post = blazorStaticContentService.Posts.FirstOrDefault(x => x.Url == FileName);
     }
 }
