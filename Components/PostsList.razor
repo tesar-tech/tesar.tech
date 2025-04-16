@@ -5,46 +5,58 @@
 @inject BlazorStaticService blazorStaticService
 
 <ul class="divide-y divide-gray-700">
-        @foreach (var post in posts.OrderByDescending(x=>x.FrontMatter.Published) )
-        {
-            <li class="py-12">
-                <article>
-                    <div class="space-y-2  ">
-                        <dl>
-                            <dt class="sr-only">Published on</dt>
-                            <dd class="text-base font-medium leading-6 text-gray-400">
-
-                                <time datetime="@post.FrontMatter.Published.ToString("yyyy-MM-ddTHH:mm:ss.fffK", CultureInfo.InvariantCulture)">
-                                    @post.FrontMatter.Published.ToString("MMMM d, yyyy", new CultureInfo("en-US"))
-                                </time>
-
-                            </dd>
-                        </dl>
-                        <div class="space-y-5 ">
-                            <div class="space-y-6">
-                                <div>
-                                    <h2 class="text-2xl font-bold leading-8 tracking-tight">
-                                        <a class="text-gray-100" href="@blazorStaticContentService.Options.PageUrl/@(post.Url)">@post.FrontMatter.Title</a>
-                                    </h2>
-                                    <div class="flex flex-wrap">
-                                        @foreach (var tag in post.FrontMatter.Tags)
-                                        {
-                                            <a class="text-primary-500 hover:text-primary-400 mr-3 text-sm font-medium uppercase" href="@blazorStaticContentService.Options.TagsPageUrl/@tag">@tag</a>
-                                        }
-                                    </div>
-                                </div>
-                                <div class="prose max-w-none text-gray-400">
-                                    @((MarkupString)post.FrontMatter.Lead)
-                                </div>
-                            </div>
-                            <div class="text-base font-medium leading-6">
-                                <a class="text-primary-500 hover:text-primary-400" aria-label='Read "@(post.FrontMatter.Lead)"' href="@blazorStaticContentService.Options.PageUrl/@(post.Url)">Read more →</a>
+    @foreach (var post in posts.OrderByDescending(x=>x.FrontMatter.Published))
+{
+    var firstImageUrl = ExtractFirstImageUrl(post.HtmlContent);
+    
+    <li class="py-12">
+        <article class="flex items-start space-x-4">
+            <div class="w-64 h-48 flex-shrink-0 overflow-hidden rounded">
+                @if (!string.IsNullOrEmpty(firstImageUrl))
+                {
+                    <img src="@firstImageUrl" alt="Post thumbnail" class="w-full h-full object-cover" />
+                }
+                else
+                {
+                    <div class="w-full h-full bg-gray-800 flex items-center justify-center">
+                        <span class="text-gray-600 text-xl">No image</span>
+                    </div>
+                }
+            </div>
+            <div class="flex-1 space-y-2">
+                <dl>
+                    <dt class="sr-only">Published on</dt>
+                    <dd class="text-base font-medium leading-6 text-gray-400">
+                        <time datetime="@post.FrontMatter.Published.ToString("yyyy-MM-ddTHH:mm:ss.fffK", CultureInfo.InvariantCulture)">
+                            @post.FrontMatter.Published.ToString("MMMM d, yyyy", new CultureInfo("en-US"))
+                        </time>
+                    </dd>
+                </dl>
+                <div class="space-y-5">
+                    <div class="space-y-6">
+                        <div>
+                            <h2 class="text-2xl font-bold leading-8 tracking-tight">
+                                <a class="text-gray-100" href="@blazorStaticContentService.Options.PageUrl/@(post.Url)">@post.FrontMatter.Title</a>
+                            </h2>
+                            <div class="flex flex-wrap">
+                                @foreach (var tag in post.FrontMatter.Tags)
+                                {
+                                    <a class="text-primary-500 hover:text-primary-400 mr-3 text-sm font-medium uppercase" href="@blazorStaticContentService.Options.TagsPageUrl/@tag">@tag</a>
+                                }
                             </div>
                         </div>
+                        <div class="prose max-w-none text-gray-400">
+                            @((MarkupString)post.FrontMatter.Lead)
+                        </div>
                     </div>
-                </article>
-            </li>
-        }
+                    <div class="text-base font-medium leading-6">
+                        <a class="text-primary-500 hover:text-primary-400" aria-label='Read "@(post.FrontMatter.Lead)"' href="@blazorStaticContentService.Options.PageUrl/@(post.Url)">Read more →</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </li>
+}
     </ul>
 
 
@@ -57,5 +69,19 @@
     {
         posts = Posts!=null? Posts.OrderBy(x=>x.FrontMatter.Published).ToList() : blazorStaticContentService.Posts;
         base.OnInitialized();
+    }
+    
+    // Utility method to extract first image URL from HTML content
+    private string? ExtractFirstImageUrl(string htmlContent)
+    {
+        if (string.IsNullOrEmpty(htmlContent))
+            return null;
+
+        var match = System.Text.RegularExpressions.Regex.Match(htmlContent, "<img[^>]+src=\"([^\"]+)\"[^>]*>", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        if (match.Success && match.Groups.Count > 1)
+        {
+            return match.Groups[1].Value;
+        }
+        return null;
     }
 }
