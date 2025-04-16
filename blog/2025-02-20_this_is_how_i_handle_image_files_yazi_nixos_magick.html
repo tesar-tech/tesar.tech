@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link rel="stylesheet" href="app.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%237c3aed%22>ᚱᚢ</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css"></head>
+
+<body class="bg-gray-950 font-tomorrow text-gray-200"><div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 "><div class="flex h-screen flex-col justify-between"><header class="flex items-center justify-between py-10"><div><a href><div class="flex flex-col items-start justify-between gap-4"><div class=" h-6 text-2xl font-semibold sm:block text-primary-800">Jan Tesa&#x159;</div>
+                <div class="italic text-sm text-gray-400">High performance in sport and programming</div></div></a></div>
+    <div class="flex items-center space-x-4 leading-5 sm:space-x-6"><a href="" class="hidden font-medium text-gray-100 sm:block">Home 
+                            </a><a href="tags" class="hidden font-medium text-gray-100 sm:block">Tags 
+                            </a><a href="https://github.com/tesar-tech/" class="hidden font-medium text-gray-100 sm:block"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a><button id="toggle-button" aria-label="Toggle Menu" class="sm:hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-8 w-8 text-gray-100"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg></button>
+        <div id="mobile-menu" class="fixed left-0 top-0 z-10 h-full w-full translate-x-full transform   duration-300 ease-in-out bg-gray-950 opacity-[0.98]"><div class="flex justify-end"><button id="close-mobile-menu-button" class="mr-8 mt-11 h-8 w-8" aria-label="Toggle Menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-100"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div>
+            <nav class="fixed mt-8 h-full"><div class="px-12 py-4"><a href="" class="text-2xl font-bold tracking-widest text-gray-100">Home
+                            </a></div><div class="px-12 py-4"><a href="tags" class="text-2xl font-bold tracking-widest text-gray-100">Tags
+                            </a></div><div class="px-12 py-4"><a href="https://github.com/tesar-tech/" class="text-2xl font-bold tracking-widest text-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></div></nav></div></div></header>
+<script>
+//👎 but what can I do? It's a static html. I can't use C# here.
+ const toggleMobileMenu = () => document.querySelector('#mobile-menu').classList.toggle('translate-x-full');
+ 
+ document.querySelector('#toggle-button').addEventListener('click', toggleMobileMenu);
+ document.querySelector('#close-mobile-menu-button').addEventListener('click', toggleMobileMenu);
+</script>
+
+        <main class="mb-auto"><article><div><header class="pt-6"><div class="gap-2 text-center"><dl><div><dt class="sr-only">Published on</dt>
+                            <dd class="text-base font-medium leading-6 text-gray-400"><time datetime="2025-04-04T00:00:00.000">April 4, 2025</time></dd></div></dl><div class="prose prose-invert mx-auto"><h1>This Is How I Handle Image Files (Yazi &#x2B; NixOS &#x2B; ImageMagick)</h1></div></div></header>
+        <div class="grid-rows-[auto_1fr] divide-y divide-gray-700"><div class="prose prose-invert max-w-none pb-8 pt-10"><p>I don’t want cloud magic handling my photos. I want tools that do what I tell them, live on my machine, and don’t get in the way. This is about setting up a simple, fast workflow with Yazi and NixOS that lets me organize and convert my images exactly how I want—no bloat, no waiting, no black mirrors.</p>
+<h2 id="introduction-to-yazi">Introduction (to Yazi)</h2>
+<p>Yazi is a fantastic tool for managing folders and files. Its biggest strengths—at least for me—are its speed, ease of use (thanks to configurable keyboard shortcuts), and straightforward extensibility. In this article, I’ll show how to extend Yazi’s functionality with quick image conversion options, specifically converting JPG files to WebP.</p>
+<p><img src="Content/Blog/media/2025-02-20_this_is_how_i_handle_image_files_yazi_nixos_magick/img-1.png" alt="Yazi with Convert Commands" /></p>
+<p>I prefer WebP because it offers a better size-to-quality ratio, reducing file size while maintaining visual quality. My phone captures photos in JPG format with unnecessarily high resolution. With Yazi, I have the perfect tool to categorize those photos using a simple folder structure—and, with a bit of configuration, also a convenient way to change their format and resolution.</p>
+<h2 id="why-nix">Why Nix?</h2>
+<p>One great advantage of Nix configuration—especially in this case—is that everything is centralized in one place: a single file or repository.</p>
+<p>You don’t need to scatter scripts across different locations, modify configurations manually, or install dependencies separately. One configuration file ensures everything is installed and set up correctly on your system.</p>
+<p>Another major benefit is reproducibility. With Nix, you can move your configuration file to another machine, apply it, and everything will work exactly as it does on your original setup.</p>
+<p>You can install Yazi by placing this in your configuration:</p>
+<pre><code class="language-nix">home.packages = [ pkgs.yazi ];
+</code></pre>
+<p>I don’t mind spending a significant amount of time configuring a tool like this in Nix—because I know it will be there for me on any new machine, just one command away:</p>
+<pre><code>home-manager switch --flake path/to/your/flake
+</code></pre>
+<h2 id="motivation">Motivation</h2>
+<p>I use Yazi for nearly all file operations—organizing, copying, deleting, transferring, and opening files. I use it for navigation, as it provides a three-level directory structure view and integrates well with <code>zoxide</code> for quick directory switching. But that’s a topic for another article...</p>
+<h3 id="organizing-photos">Organizing photos</h3>
+<p>One specific use case where I find Yazi especially useful is organizing my photos. Pictures from my phone are synced to my computer via <code>syncthing</code>, and I need to sort them into a structured folder hierarchy. I always did this manually, but now with Yazi it becomes fast and actually enjoyable.</p>
+<pre><code>Photos/ (dummy names to  illustrate the structure) 
+├── 2023/
+│   ├── 0303_Birthday Bash
+│   ├── 0722_Beach Days Begin
+│   ├── 1224_Christmas Eve Dinner
+│   └── ...
+├── 2024/
+│   ├── 0209_Ski Weekend Escape
+│   ├── 0515_Spring Garden Tour
+│   ├── 0910_Weekend in the Woods
+│   └── ...
+├── 2025/
+│   ├── 0101_New Year Fireworks
+│   ├── 0418_Easter Egg Hunt
+│   ├── 0812_Summer Festival Fun
+│   └── ...
+
+</code></pre>
+<h3 id="photo-cloud-maybe">&quot;Photo cloud&quot; maybe?</h3>
+<p>Sure, you could use cloud services like Google Photos or Apple Photos—but then your images are stored remotely, tied to an account you might lose, subject to platform lock-in, and not under your direct control. Cloud platforms can also change unexpectedly—pricing models, storage limits, or features might be altered or removed without notice. Privacy is another concern: even with encrypted connections and “private” accounts, your data is still handled by third parties, often used for analytics or machine learning. That’s fine for many people, but I prefer having my memories stored locally.</p>
+<figure style="display: flex; flex-direction: column; align-items: center; text-align:center; gap: 0.5em;">
+  <img src="Content/Blog/media/2025-02-20_this_is_how_i_handle_image_files_yazi_nixos_magick/img.webp"  alt="cloud owning" />
+  <figcaption >
+  For a long time, I used Microsoft OneDrive to sync my photos from my phone to my desktop. It usually worked well — most of the time. But the constant nudging to buy more storage and the never-ending 'keep your photos with us – it’s totally safe!' narrative started to wear me down.</figcaption>
+</figure> 
+<h2 id="converting-photos">Converting Photos</h2>
+<p>My phone captures images in JPG format at 4032x2268 resolution, typically around 2.5MB per image. I don’t need that many pixels, and WebP generally results in smaller file sizes compared to JPEG (on average, a 25% reduction in my tests).</p>
+<p>This simple Bash command converts a JPEG image to WebP with a maximum resolution of 3000px:</p>
+<pre><code class="language-sh">magick photo.jpg -resize '3000x3000&gt;' -quality 80 photo.webp
+</code></pre>
+<p>The quality is set to 80, which strikes a balance between file size and visual quality.<br />
+<strong>In practice:</strong> the difference is barely noticeable, and file sizes shrink fast.</p>
+<p>You can install ImageMagick on NixOS with:</p>
+<pre><code class="language-nix">home.packages = [ 
+      pkgs.yazi #from previous step
+      pkgs.imagemagick
+       ];
+</code></pre>
+<h2 id="integrating-image-conversion-into-yazi">Integrating Image Conversion into Yazi</h2>
+<p>Yazi makes it easy to customize keyboard shortcuts, allowing you to execute commands on selected files. By pressing <code>e</code> in Yazi, you can trigger a shortcut menu with predefined actions.</p>
+<p><img src="Content/Blog/media/2025-02-20_this_is_how_i_handle_image_files_yazi_nixos_magick/img-2.png" alt="yazi shortucts" /></p>
+<p>The following Nix configuration sets up these shortcuts:</p>
+<pre><code class="language-nix">programs.yazi = {
+  keymap.manager.prepend_keymap = [
+    {
+      run = ''
+        shell '~/scripts/photo-processor.sh 80 &quot;3000x3000&gt;&quot; 6 &quot;$@&quot;' --confirm
+      '';
+      on = [&quot;e&quot; &quot;e&quot;];
+      desc = &quot;Convert (3K, method 6, q80)&quot;;
+    }
+    {
+      on = [&quot;e&quot; &quot;q&quot;];
+      run = ''
+        shell '~/scripts/photo-processor.sh &quot;&quot; &quot;3000x3000&gt;&quot; 6 &quot;$@&quot;' --confirm --block
+      '';
+      desc = &quot;Convert - custom quality&quot;;
+    }
+    {
+      on = [&quot;e&quot; &quot;r&quot;];
+      run = ''
+        shell '~/scripts/photo-processor.sh 80 &quot;&quot; 6 &quot;$@&quot;' --block --confirm
+      '';
+      desc = &quot;Convert - custom resolution&quot;;
+    }
+    {
+      on = [&quot;e&quot; &quot;x&quot;];
+      run = ''
+        shell '~/scripts/photo-processor.sh &quot;&quot; &quot;&quot; &quot;&quot; &quot;$@&quot;' --block --confirm
+      '';
+      desc = &quot;Convert - all custom&quot;;
+    }
+  ];
+};
+</code></pre>
+<p>Each shortcut calls the <code>photo-processor.sh</code> script with different arguments, allowing customization of the final resolution, WebP quality, and compression method.</p>
+<h3 id="setting-up-the-script">Setting Up the Script</h3>
+<p>I store the script in the same folder as my Yazi settings and ensure Nix places it in <code>~/scripts/photo-processor.sh</code>:</p>
+<pre><code class="language-nix">home.file.&quot;${scripts.photo-processor}&quot; = {
+  source = ./photo-processor.sh;
+  executable = true;
+};
+</code></pre>
+<p>The <code>scripts</code> variable is defined in a <code>let</code> block:</p>
+<pre><code class="language-nix">let
+  scrDir = &quot;scripts&quot;;
+  scripts = {
+    photo-processor = &quot;${scrDir}/photo-processor.sh&quot;;
+  };
+in {
+  # Configuration continues...
+}
+</code></pre>
+<h2 id="the-photo-processor.sh-script">The <code>photo-processor.sh</code> Script</h2>
+<p>The script below is a Bash wrapper for ImageMagick's <code>magick</code> command. It takes in optional parameters for image quality, resolution, and WebP method. If these values aren't provided when the script is invoked, it prompts the user to input them interactively (with default values). It then iterates through the selected files, checks for supported formats (JPG, JPEG, PNG), and converts each image to WebP using the provided parameters. While converting, it shows simple progress reporting and skips unsupported file types.</p>
+<pre><code class="language-sh">#!/bin/bash
+
+prompt_if_empty() {
+  local var_name=&quot;$1&quot;
+  local prompt_text=&quot;$2&quot;
+  local default_value=&quot;$3&quot;
+
+  if [[ -z &quot;${!var_name}&quot; ]]; then
+    echo -n &quot;$prompt_text ($default_value): &quot;
+    read input
+    eval &quot;$var_name='${input:-$default_value}'&quot;
+  fi
+}
+
+QUALITY=&quot;$1&quot;
+RESOLUTION=&quot;$2&quot;
+METHOD=&quot;$3&quot;
+
+prompt_if_empty QUALITY &quot;Enter quality&quot; &quot;80&quot;
+prompt_if_empty RESOLUTION &quot;Enter resolution&quot; &quot;3000x3000&gt;&quot;
+prompt_if_empty METHOD &quot;Enter WebP method&quot; &quot;6&quot;
+
+shift 3
+
+TOTAL_FILES=$#
+CURRENT_FILE=0
+shopt -s nocasematch
+
+for file in &quot;$@&quot;; do
+  ((CURRENT_FILE++))
+  ext=&quot;${file##*.}&quot;
+  base=&quot;${file%.*}&quot;
+
+  if [[ &quot;$ext&quot; =~ ^(jpg|jpeg|png)$ ]]; then
+    echo -ne &quot;[${CURRENT_FILE}/${TOTAL_FILES}] Processing: $file\r&quot;
+    magick &quot;$file&quot; -resize &quot;$RESOLUTION&quot; -define webp:method=&quot;$METHOD&quot; -quality &quot;$QUALITY&quot; &quot;$base.webp&quot;
+    echo -ne &quot;\e[2K\r[${CURRENT_FILE}/${TOTAL_FILES}] ✅ Done: $base.webp\n&quot;
+  else
+    echo &quot;[${CURRENT_FILE}/${TOTAL_FILES}] ❌ Skipping unsupported file: $file&quot;
+  fi
+
+done
+shopt -u nocasematch
+echo &quot;Processing complete! Converted $CURRENT_FILE/$TOTAL_FILES files.&quot;
+</code></pre>
+<h2 id="the-final-result">The final result</h2>
+<p><img src="Content/Blog/media/2025-02-20_this_is_how_i_handle_image_files_yazi_nixos_magick/recording.webp" alt="Yazi Screenshot" /></p>
+<p>This setup lives in my terminal and does exactly what I need—fast photo sorting and conversion, no clicks, no fluff. It works for me, but Yazi’s flexible enough to bend to whatever workflow you throw at it.</p>
+</div><div class="pb-6 pt-6 text-sm text-gray-300"><a target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/tesar.tech/tree/main/Content/Blog/2025-02-20_this_is_how_i_handle_image_files_yazi_nixos_magick">View on GitHub</a></div><footer><div class="pt-4 xl:pt-8 "><a class="text-primary-500 hover:text-primary-400" aria-label="Back to the home" href>← Back to the home</a></div></footer></div></div></article></main>
+
+        <footer><div class="mt-16 flex flex-col items-center"><div class="mb-3 flex space-x-4"><a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/"><span class="sr-only">github</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
+                    <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer" href="https://x.com/"><span class="sr-only">x</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path></svg></a></div>
+                <div class="mb-2 flex space-x-2 text-sm text-gray-400"><a target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/blazorStatic"> Built with Blazor Static</a>
+                    <div>•</div>
+                    <div>© 2025</div></div></div></footer></div></div>
+        <blazor-focus-on-navigate selector="h1"></blazor-focus-on-navigate></body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/nix.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
+<script>hljs.highlightAll();</script></html>
