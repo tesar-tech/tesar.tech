@@ -1,6 +1,5 @@
 ---
 title: Matlab zlehka - Vektory a matice dějství druhé
-published: 2019-05-29
 tags: [matlab, itnetwork.cz, programování ]
 lead: "Druhý článek o maticích a vektorech v Matlabu. Zahrnuje pokročilejší operace a manipulaci s datovými strukturami."
 ---

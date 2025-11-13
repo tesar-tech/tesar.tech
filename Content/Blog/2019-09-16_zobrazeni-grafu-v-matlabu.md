@@ -1,6 +1,5 @@
 ---
 title: Zobrazení grafů v MATLABu
-published: 2019-09-16
 tags: [matlab, itnetwork.cz, grafy, programování ]
 lead: "Zobrazení dvourozměrných dat ve formě rozličných grafů. Článek popisuje různé možnosti vizualizace dat v MATLABu."
 

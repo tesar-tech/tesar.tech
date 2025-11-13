@@ -1,6 +1,5 @@
 ---
 title: Recenze sporttesteru TOMTOM Cardio Multisport
-published: 2015-05-03
 tags: [atletika,vzdy.cz, recenze, tomtom, hodinky ]
 lead: "Série tří článků recenzujících sporttester od TomTomu. Věnuje se funkcím pro sportovce a možnosti monitorování výkonu."
 ---

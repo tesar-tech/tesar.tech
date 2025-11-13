@@ -1,6 +1,5 @@
 ---
 title: Publish Blazor App to Azure Container with GitHub Registry
-published: 2024-10-18
 tags: [Blazor,Azure,CI CD,Docker, ghcr,Blazorise]
 lead: "Learn how to deploy a Blazor app on Azure Container Apps using GitHub Container Registry with a seamless CI/CD pipeline. Written for Blazorise Blog."
 ---

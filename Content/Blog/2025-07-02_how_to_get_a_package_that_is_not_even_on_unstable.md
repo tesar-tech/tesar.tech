@@ -1,6 +1,5 @@
 ---
 title: Install a Nix Package from an Unmerged Pull Request  
-published: 2025-07-02  
 tags: [nix, tabby]  
 lead: "When you can't wait for a PR to get merged, you can still get the package with a few lines of Nix."  
 isDraft: false  

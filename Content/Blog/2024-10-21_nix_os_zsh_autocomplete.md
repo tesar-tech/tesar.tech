@@ -1,6 +1,5 @@
 ---
 title: "NixOS - Autocomplete in the Terminal: Setting Up Zsh for a Streamlined Workflow"
-published: 2024-10-27
 tags: [ nixos, linux, zsh ]
 lead: "Optimized terminal experience on NixOS using Zsh, offering advanced features like autocomplete, history suggestions."
 ---

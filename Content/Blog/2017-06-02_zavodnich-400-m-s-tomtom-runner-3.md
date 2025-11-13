@@ -1,6 +1,5 @@
 ---
 title: Závodních 400 M S TOMTOM RUNNER 3
-published: 2017-06-02
 tags: [atletika,vzdy.cz, 400 m, recenze, tomtom, hodinky ]
 lead: "Dal jsem si závod se sport testerem TomTom. Na křivkách je hezky vidět co se dělo."
 ---

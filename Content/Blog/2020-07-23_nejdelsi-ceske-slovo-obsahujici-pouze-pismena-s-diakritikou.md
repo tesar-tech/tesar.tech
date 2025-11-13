@@ -1,6 +1,5 @@
 ---
 title: Nejdelší české slovo obsahující pouze písmena s diakritikou
-published: 2020-07-23
 tags:   [čeština]
 lead: "Hledání nejdelšího českého slova, které obsahuje pouze písmena s diakritikou."
 ---

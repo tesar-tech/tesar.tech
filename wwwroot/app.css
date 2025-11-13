@@ -18,3 +18,22 @@
     --color-primary-900: var(--color-violet-900);
     --color-primary-950: var(--color-violet-950);
 }
+@utility prose {
+    @apply max-w-none;
+
+    h1 {
+        @apply text-primary-800;
+    }
+    h2 {
+        @apply text-primary-600;
+    }
+    h3 {
+        @apply text-primary-500;
+    }
+    h4 {
+        @apply text-primary-400;
+    }
+    code {
+        @apply text-emerald-600;
+    }
+}

@@ -1,6 +1,5 @@
 ---
 title: Cykly a maticový přístup v MATLAB
-published: 2019-08-16
 tags: [matlab, itnetwork.cz, podmínky, programování ]
 lead: "Syntaxe a popis cyklů v MATLABu. Základní struktury a možnosti pro efektivní programování s využitím maticového přístupu."
 ---

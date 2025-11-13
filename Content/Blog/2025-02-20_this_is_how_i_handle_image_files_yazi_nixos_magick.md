@@ -1,6 +1,5 @@
 ---
 title: This Is How I Handle Image Files (Yazi + NixOS + ImageMagick)
-published: 2025-04-04
 tags: [yazi, nixos, linux, imagemagick]
 lead: "I don’t want cloud magic handling my photos. I want tools that do what I tell them, live on my machine, and don’t get in the way. This is about setting up a simple, fast workflow with Yazi and NixOS that lets me organize and convert my images exactly how I want—no bloat, no waiting, no black mirrors."
 isDraft: false

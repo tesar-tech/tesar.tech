@@ -1,6 +1,5 @@
 ---
 title: Raná recenze Windows 10 Mobile
-published: 2015-09-05
 tags: [windows 10 mobile]
 lead: "Windows 10 mobile a jejich úvodní kapitola"
 ---

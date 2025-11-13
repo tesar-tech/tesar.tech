@@ -1,6 +1,5 @@
 ---
 title: Custom Keybindings in Zellij - Launch Tools Like LazyDocker Instantly
-published: 2025-11-23
 tags: [terminal, zellij]
 lead: "How to bind custom shortcuts in Zellij to open tools in new tabs."
 isDraft: false
@@ -14,11 +13,26 @@ For example, I wanted this behavior:
 
 Here’s how to make that happen.
 
+## Pane maybe?
+
+Btw - opening lazydocker inside a new **pane** is easy:
+
+```cs
+shared_except "locked" {
+  bind "Ctrl Alt t" {
+    Run "lazydocker" {
+    }
+  }
+}
+```
+
+The complicated bit is about tabs. I am more a tab person rather than a pane one - I use panes rarely, I like my full screens most of the time.
+
 ## Step 1: Add a Keybinding
 
 Edit your Zellij config file:
 
-```kdl
+```cs
 // ~/.config/zellij/config.kdl
 
 shared_except "locked" {
@@ -37,7 +51,7 @@ This tells Zellij to open a new tab using a custom layout whenever you press `Ct
 
 Create the layout file that runs `lazydocker`:
 
-```kdl
+```cs
 // /path/to/lazydocker.kdl
 
 layout {
@@ -59,12 +73,12 @@ Now pressing `Ctrl+Alt+t` launches LazyDocker in a new tab.
 
 By default, when `lazydocker` exits, you’ll see the "Zellij run command wrapper" screen:
 
-![zellij run command wrapper](media/2025-11-26_run_a_command_in_new_zellij_tab/20251109_222331.png)
+![zellij run command wrapper](media/20251109_222331.png)
 Sometimes that’s useful (for example, when running `ssh`), but sometimes it’s annoying. You have two ways to handle it:
 
 **Option 1 - Close the tab when the process exits:**
 
-```kdl
+```cs
 tab name="LazyDocker" {
   pane command="lazydocker" close_on_exit=true
 }
@@ -72,7 +86,7 @@ tab name="LazyDocker" {
 
 **Option 2 - Drop back to your shell instead:**
 
-```kdl
+```cs
 tab name="LazyDocker" {
   pane command="zsh" {
     args "-lc" "lazydocker; exec zsh"
@@ -89,6 +103,6 @@ tab name="LazyDocker" {
   Failed to load layout: KdlDeserialization error: Failed to parse Zellij configuration
   ```
 
-  ![error zellij](media/2025-11-26_run_a_command_in_new_zellij_tab/20251109_230415.png)
+  ![error zellij](media/20251109_230415.png)
 
 Creating a layout for each tool can feel verbose, but it’s powerful once set up. I later built an FZF-based selector to launch tools like LazyDocker, Yazi, or SSH sessions on demand - that’s a topic for another article.
