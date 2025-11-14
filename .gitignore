@@ -367,3 +367,4 @@ FodyWeavers.xsd
 .idea/
 /wwwroot/app.min.css
 output 
+wwwroot/sitemap.xml

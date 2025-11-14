@@ -9,11 +9,13 @@ builder.WebHost.UseStaticWebAssets();
 builder.Services.AddBlazorStaticService(opt =>
 {
   opt.IgnoredPathsOnContentCopy.Add("app.css");//pre-build version for tailwind
-
+  opt.SiteUrl = "https://tesar-tech";
+  opt.ShouldGenerateSitemap = true;
 }
     )
        .AddBlazorStaticContentService<BlogFrontMatter>(opt =>
        {
+
          opt.AfterContentParsedAndAddedAction = (service, contentService) =>
          {
            contentService.Posts.ForEach(post =>
