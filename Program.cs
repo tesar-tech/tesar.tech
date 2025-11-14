@@ -12,18 +12,21 @@ builder.Services.AddBlazorStaticService(opt =>
 
 }
     )
-       .AddBlazorStaticContentService<BlogFrontMatter>(opt => {
-           opt.AfterContentParsedAndAddedAction = (service, contentService) => {
-               contentService.Posts.ForEach(post => {
-                   if( post.Url.Split('_', 2) is [var datePart, var rest]
-                       && DateTime.TryParseExact(datePart, "yyyy-MM-dd", CultureInfo.InvariantCulture,
-                       DateTimeStyles.None, out var published) )
-                   {
-                       post.FrontMatter.Published = published;
-                   }
-               });
-               service.Options.PagesToGenerate.ForEach(page => { });
-           };
+       .AddBlazorStaticContentService<BlogFrontMatter>(opt =>
+       {
+         opt.AfterContentParsedAndAddedAction = (service, contentService) =>
+         {
+           contentService.Posts.ForEach(post =>
+           {
+             if (post.Url.Split('_', 2) is [var datePart, var rest]
+                 && DateTime.TryParseExact(datePart, "yyyy-MM-dd", CultureInfo.InvariantCulture,
+                 DateTimeStyles.None, out var published))
+             {
+               post.FrontMatter.Published = published;
+             }
+           });
+           service.Options.PagesToGenerate.ForEach(page => { });
+         };
        }) //
     .AddBlazorStaticContentService<VdpFrontMatter>(
     opt =>
@@ -61,6 +64,7 @@ public static class WebsiteKeys
   public const string GitHubMe = "https://github.com/tesar-tech/";
   public const string GitHubRepo = $"{GitHubMe}tesar.tech";
   public const string X = "https://x.com/";
+  public const string Xme = $"{X}tesar_tech";
   public const string Title = "Jan Tesař";
   public const string BlogPostStorageAddress = $"{GitHubRepo}/tree/main/Content/Blog";
   public const string BlogLead = "High performance in sport and programming";
