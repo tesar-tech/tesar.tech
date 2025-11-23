@@ -1,11 +1,10 @@
 ---
-title: Custom Keybindings in Zellij - Launch Tools Like LazyDocker Instantly
+title: "Zellij: Execute a Command on New Tab Creation"
 tags: [terminal, zellij]
 lead: "How to bind custom shortcuts in Zellij to open tools in new tabs."
-isDraft: false
 ---
 
-Zellij has many features that simplify terminal workflows. However, some actions, like quickly opening a new tab running a specific tool, aren’t immediately obvious.
+Zellij has many features that simplify terminal workflows. However, some actions, like quickly opening a **new tab** running a specific tool, aren’t immediately obvious.
 
 For example, I wanted this behavior:
 
