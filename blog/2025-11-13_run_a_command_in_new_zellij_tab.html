@@ -96,6 +96,12 @@ Sometimes that’s useful (for example, when running <code>ssh</code>), but some
 <pre><code class="language-sh">Failed to load layout: KdlDeserialization error: Failed to parse Zellij configuration
 </code></pre>
 <p><img src="Content/Blog/2025-11-13_run_a_command_in_new_zellij_tab/media/20251109_230415.png" alt="error zellij" /></p>
+<ul>
+<li><p>you can see the what's wrong with the layout by running</p>
+<pre><code class="language-sh">zellij --layout ./lazydocker.kdl
+</code></pre>
+</li>
+</ul>
 </li>
 </ul>
 <p>Creating a layout for each tool can feel verbose, but it’s powerful once set up. I later built an FZF-based selector to launch tools like LazyDocker, Yazi, or SSH sessions on demand - that’s a topic for another article.</p>
