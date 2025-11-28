@@ -103,5 +103,10 @@ tab name="LazyDocker" {
   ```
 
   ![error zellij](media/20251109_230415.png)
+  - you can see the what's wrong with the layout by running
+
+    ```sh
+    zellij --layout ./lazydocker.kdl
+    ```
 
 Creating a layout for each tool can feel verbose, but it’s powerful once set up. I later built an FZF-based selector to launch tools like LazyDocker, Yazi, or SSH sessions on demand - that’s a topic for another article.
