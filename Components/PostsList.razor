@@ -4,14 +4,15 @@
 @inject BlazorStaticContentService<BlogFrontMatter> blazorStaticContentService
 @inject BlazorStaticService blazorStaticService
 
-<ul class="flex flex-col gap-10">
+<ul class="flex flex-col gap-10 mt-2">
   @foreach (var post in posts.OrderByDescending(x => x.FrontMatter.Published))
   {
     var firstImageUrl = ExtractFirstImageUrl(post.HtmlContent);
 
     <li>
-      <article class="group grid gap-6 rounded  transition hover:border-primary-800/50
-                      border-primary-800/0  border-x  lg:grid-cols-[220px_1fr] lg:gap-10 p-4">
+      <article
+        class="group grid gap-4 rounded  transition hover:border-primary-800/50
+                                                        border-primary-800/0  border-r  lg:grid-cols-[300px_1fr] lg:gap-4 ">
         <div class="relative h-48 w-full overflow-hidden rounded-2xl border border-gray-900/60 bg-gray-900/50 lg:h-full">
           @if (!string.IsNullOrEmpty(firstImageUrl))
           {
@@ -64,6 +65,7 @@
             </a>
           </div>
         </div>
+        <hr class="lg:hidden col-span-full border-t border-primary-800/40 mt-2">
       </article>
 
     </li>
