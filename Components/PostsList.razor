@@ -12,12 +12,12 @@
     <li>
       <article
         class="group grid gap-4 rounded  transition hover:border-primary-800/50
-                                                        border-primary-800/0  border-r  lg:grid-cols-[300px_1fr] lg:gap-4 ">
+                                                          border-primary-800/0  border-r  lg:grid-cols-[300px_1fr] lg:gap-4 ">
         <div class="relative h-48 w-full overflow-hidden rounded-2xl border border-gray-900/60 bg-gray-900/50 lg:h-full">
           @if (!string.IsNullOrEmpty(firstImageUrl))
           {
             <img src="@firstImageUrl" alt="Post thumbnail"
-              class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              class="h-full w-full object-contain transition duration-500 group-hover:scale-105" />
           }
           else
           {
