@@ -25,13 +25,105 @@
   </script>
 
     <main class="flex-1"><article class="space-y-10"><header class=" border-gray-900/80 bg-gray-950/40  text-center sm:p-10"><div class="flex flex-col gap-4"><dl class="flex flex-col items-center gap-2 text-gray-400"><dt class="sr-only">Published on</dt>
-          <dd class="mono-label tracking-[0.3em]"><time datetime="2015-09-05T00:00:00.000">Sep 5, 2015</time></dd></dl><div class="prose prose-invert mx-auto"><h1>Ran&#xE1; recenze Windows 10 Mobile</h1></div></div></header><section class="  bg-gray-950/40  "><div class="prose prose-invert max-w-none"><p>Únor 2019: Tehdy v roce 2015 byl Windows 10 mobile čerstvým nástupcem Windows Phone 8.1. Systém v preview verzi fungoval s problémy i na mojí Lumii 720, která disponovala pouze 512 MB RAM. Tyto slabší zařízení Microsoft časem zaříznul. Vývoj Windows 10 mobile byl během let výrazně utlumen. Podpora končí v prosinci roku 2019 a nástupce se nechystá.</p>
-<p>Tento článek je právě z doby, kdy to s telefony s Windows vypadalo alespoň trochu nadějně.
-Publikován na itnetwork.cz.</p>
-<p><a href="https://www.itnetwork.cz/mobilni-zarizeni/rana-recenze-windows-10-mobile">https://www.itnetwork.cz/mobilni-zarizeni/rana-recenze-windows-10-mobile</a></p>
-<hr />
+          <dd class="mono-label tracking-[0.3em]"><time datetime="2025-11-29T00:00:00.000">Nov 29, 2025</time></dd></dl><div class="prose prose-invert mx-auto"><h1>Neovim for writing: toggle spellcheck and switch languages</h1></div></div></header><section class="  bg-gray-950/40  "><div class="prose prose-invert max-w-none"><p>I am gradually moving all my text editing to Neovim. One of my common tasks is writing longer text: emails, docs, and blog posts like this one.</p>
+<figure style="display: flex; flex-direction: column; align-items: center; text-align:center; gap: 0.5em;">
+  <img src="Content/Blog/2025-11-29_neovim_for_writing_spellcheck/media/20251128_225655.png"  alt="nvim spellcheck" />
+  <figcaption >
+Working spell check in nvim - with statusline indicator.
+  </figcaption >
+</figure>
+<p>Spellcheck is something that “just works” in browsers and many editors.</p>
+<p>My setup is slightly trickier because I need to write in two languages: English and Czech.</p>
+<p>In Neovim you enable spellcheck with:</p>
+<pre><code class="language-sh">:set spell
+</code></pre>
+<p>To set the language:</p>
+<pre><code class="language-sh">:set spelllang=cs
+</code></pre>
+<p>This is where I got stuck. Neovim did not have the Czech dictionary and did not show the usual prompt to download it.</p>
+<p>If you see something like:</p>
+<pre><code class="language-sh">Cannot find word list cs.utf-8.spl or cs.ascii.spl
+</code></pre>
+<p>the fix for me was this <a href="https://github.com/neovim/neovim/issues/2102#issuecomment-269100273">Christmas comment</a> from 2016:</p>
+<blockquote>
+<p>I found that some plugins for enhancing spell capability somehow disable the prompt. I started <code>nvim -u none</code> then run <code>:set spell</code> and <code>nvim</code> prompted me to download the file.</p>
+</blockquote>
+<p>I did exactly that, Neovim downloaded the dictionary, and Czech spellcheck started working.</p>
+<h2 id="making-it-usable-toggling-spellcheck">Making it usable: toggling spellcheck</h2>
+<p>Spellcheck is not something I want on all the time.</p>
+<p>I keep it disabled by default and control it via keymaps.</p>
+<p>Neovim allows multiple languages at once:</p>
+<pre><code class="language-sh">:set spelllang=en,cs
+</code></pre>
+<p>I avoid this, because it introduces a few annoying <strong>false positives</strong> and misses. For example:</p>
+<ul>
+<li><code>síť</code> is “net” in Czech, but <code>sit</code> is invalid in Czech, but a valid English word and would not be flagged by a mixed spellchecker.</li>
+</ul>
+<p>Instead I use two small toggles:</p>
+<ul>
+<li><p><code>&lt;Leader&gt;na</code></p>
+<ul>
+<li>if spellcheck is off or set to English → switch to Czech</li>
+<li>if spellcheck is already Czech → turn spellcheck off</li>
+</ul>
+</li>
+<li><p><code>&lt;Leader&gt;ne</code></p>
+<ul>
+<li>if spellcheck is off or set to Czech → switch to English</li>
+<li>if spellcheck is already English → turn spellcheck off</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-lua">local function toggle_spell(lang)
+  local spell_on = vim.opt_local.spell:get()
+  local current_langs = vim.opt_local.spelllang:get()
+  local current_lang = spell_on and current_langs[1] or nil
+
+  if current_lang == lang then
+    vim.opt_local.spell = false
+    return
+  end
+
+  vim.opt_local.spell = true
+  vim.opt_local.spelllang = { lang }
+end
+
+vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;ne&quot;, function()
+  toggle_spell(&quot;en&quot;)
+end, { desc = &quot;Toggle English spell checking&quot; })
+
+vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;na&quot;, function()
+  toggle_spell(&quot;cs&quot;)
+end, { desc = &quot;Toggle Czech spell checking&quot; })
+</code></pre>
+<h2 id="statusline-indicator">Statusline indicator</h2>
+<ul>
+<li>Spellcheck on ⇒ show a flag emoji for the active language</li>
+<li>Spellcheck off ⇒ show nothing special</li>
+</ul>
+<p><img src="Content/Blog/2025-11-29_neovim_for_writing_spellcheck/media/20251128_222654.png" alt="statusline lang flag" /></p>
+<p>How you wire this depends on your statusline plugin, if any.</p>
+<p>I use a simple custom function:</p>
+<pre><code class="language-lua">function _G.SpellStatusFlag()
+  if not vim.opt_local.spell:get() then
+    return &quot;&quot;
+  end
+
+  local lang = vim.opt_local.spelllang:get()[1]
+  if not lang or lang == &quot;&quot; then
+    return &quot;&quot;
+  end
+
+  local flag = ({ en = &quot;🇬🇧&quot;, cs = &quot;🇨🇿&quot; })[lang] or lang
+  return &quot; &quot; .. flag
+end
+
+vim.opt.statusline = &quot;%&lt;%f %h%#StatusModified#%m%*%r%=%{v:lua.SpellStatusFlag()} %-14.(%l,%c%V%) %P&quot;
+</code></pre>
+<h2 id="next">Next</h2>
+<p>This is only the first step in my Neovim text-editing journey; more tweaks will follow.</p>
 </div>
-    <div class="mt-10 flex flex-wrap items-center justify-between gap-4"><a class="inline-flex items-center gap-2 rounded-full border border-accent-500/60 px-4 py-2 text-sm font-semibold text-accent-300 transition hover:border-accent-300 hover:text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/tesar.tech/tree/main/Content/Blog/2015-09-05_rana-recenze-windows-10-mobile"><span>View on GitHub</span>
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-4"><a class="inline-flex items-center gap-2 rounded-full border border-accent-500/60 px-4 py-2 text-sm font-semibold text-accent-300 transition hover:border-accent-300 hover:text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/tesar.tech/tree/main/Content/Blog/2025-11-29_neovim_for_writing_spellcheck"><span>View on GitHub</span>
           <span aria-hidden="true">↗</span></a><a class="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 transition hover:text-white" aria-label="Back to the home" href>
         ← Back home
       </a></div></section></article></main>
