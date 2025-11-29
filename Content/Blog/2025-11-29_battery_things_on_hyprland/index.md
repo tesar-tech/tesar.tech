@@ -1,7 +1,7 @@
 ---
-title: Custom Keybindings in Zellij - Launch Tools Like LazyDocker Instantly
+title: ""
 tags: [terminal, zellij]
-lead: "How to bind custom shortcuts in Zellij to open tools in new tabs."
+lead: ""
 isDraft: true
 ---
 
