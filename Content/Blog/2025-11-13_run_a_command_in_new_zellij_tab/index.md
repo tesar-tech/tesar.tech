@@ -2,7 +2,19 @@
 title: "Zellij: Execute a Command on New Tab Creation"
 tags: [terminal, zellij]
 lead: "How to bind custom shortcuts in Zellij to open tools in new tabs."
+updated: 2026-07-18
 ---
+
+> **_ UPDATE March 2026 _** You can do this easily with improved cli actions now https://zellij.dev/news/remote-sessions-windows-cli/#cli-automation.
+> The solution is as follows:
+>
+> ```cs
+>     bind "Ctrl Alt t" {
+>           NewTab
+>           WriteChars "lazydocker"
+>           Write 10  #this is enter
+>       }
+> ```
 
 Zellij has many features that simplify terminal workflows. However, some actions, like quickly opening a **new tab** running a specific tool, aren’t immediately obvious.
 
