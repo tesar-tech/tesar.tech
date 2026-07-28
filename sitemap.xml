@@ -78,6 +78,9 @@
     <loc>https://tesar.tech/blog/2025-11-29_neovim_for_writing_spellcheck</loc>
   </url>
   <url>
+    <loc>https://tesar.tech/blog/2026-07-27_herdr_vs_zellij</loc>
+  </url>
+  <url>
     <loc>https://tesar.tech/blog/2025-11-13_run_a_command_in_new_zellij_tab</loc>
   </url>
   <url>
@@ -223,6 +226,12 @@
   </url>
   <url>
     <loc>https://tesar.tech/tags/zellij</loc>
+  </url>
+  <url>
+    <loc>https://tesar.tech/tags/herdr</loc>
+  </url>
+  <url>
+    <loc>https://tesar.tech/tags/terminal%2bmultiplexer</loc>
   </url>
   <url>
     <loc>https://tesar.tech/tags/hardware</loc>

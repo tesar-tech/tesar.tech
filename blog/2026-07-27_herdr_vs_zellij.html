@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link rel="stylesheet" href="app.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%237c3aed%22>ᚱᚢ</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css"></head>
+
+<body class="bg-[#03050a] font-tomorrow text-gray-200 antialiased"><div class="mx-auto flex min-h-screen max-w-6xl flex-col px-2 py-8 sm:px-4 xl:px-0 min-h-screen bg-[#05060a] text-gray-100"><div class="bg-gray-950/80 border border-gray-900/70 flex flex-1 flex-col gap-10 px-2 py-8 sm:px-6 lg:py-12"><header class="border-b border-gray-800/70 pb-8"><div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><a href class="group inline-flex flex-col gap-3"><div class="text-3xl font-semibold tracking-tight text-primary-800 hover:text-primary-700">Jan Tesa&#x159;</div>
+      <p class="mono-label text-[0.7rem] text-gray-500">High performance in sport and programming</p></a>
+    <div class="flex items-center gap-3 leading-5"><div class="hidden items-center gap-3 md:flex"><a href="" class="inline-flex items-center gap-2 rounded-full border border-gray-800/60 bg-gray-950/40 px-4 py-2 text-sm font-semibold text-gray-300 transition hover:border-gray-700 hover:text-white">Home</a><a href="tags" class="inline-flex items-center gap-2 rounded-full border border-gray-800/60 bg-gray-950/40 px-4 py-2 text-sm font-semibold text-gray-300 transition hover:border-gray-700 hover:text-white">Tags</a><a href="https://github.com/tesar-tech/" class="inline-flex items-center gap-2 rounded-full border border-gray-800/60 bg-gray-950/40 px-4 py-2 text-sm font-semibold text-gray-300 transition hover:border-gray-700 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></div>
+      <button id="toggle-button" aria-label="Toggle Menu" class="md:hidden rounded-full border border-gray-800/60 bg-gray-950/60 p-2 text-gray-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg></button></div></div>
+  <div id="mobile-menu" class="fixed inset-0 z-20 translate-x-full transform bg-[#05060a]/95 px-8 py-12 transition duration-300 ease-in-out md:hidden"><div class="flex justify-end"><button id="close-mobile-menu-button" class="rounded-full border border-gray-800/70 p-2 text-gray-100" aria-label="Close Menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div>
+    <nav class="mt-12 flex flex-col gap-6"><a href="" class="text-2xl font-semibold tracking-widest text-gray-100">Home</a><a href="tags" class="text-2xl font-semibold tracking-widest text-gray-100">Tags</a><a href="https://github.com/tesar-tech/" class="text-2xl font-semibold tracking-widest text-gray-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></nav></div></header>
+<script>
+  //👎 but what can I do? It's a static html. I can't use C# here.
+  const toggleMobileMenu = () => document.querySelector('#mobile-menu').classList.toggle('translate-x-full');
+
+  document.querySelector('#toggle-button').addEventListener('click', toggleMobileMenu);
+  document.querySelector('#close-mobile-menu-button').addEventListener('click', toggleMobileMenu);
+  </script>
+
+    <main class="flex-1"><article class="space-y-10"><header class=" border-gray-900/80 bg-gray-950/40  text-center sm:p-10"><div class="flex flex-col gap-4"><dl class="flex flex-col items-center gap-2 text-gray-400"><dt class="sr-only">Published on</dt>
+          <dd class="mono-label tracking-[0.3em]"><time datetime="2026-07-27T00:00:00.000">Jul 27, 2026</time></dd></dl><div class="prose prose-invert mx-auto"><h1>Herdr vs Zellij (Jul 2026)</h1></div></div></header><section class="  bg-gray-950/40  "><div class="prose prose-invert max-w-none"><p>I have been using <a href="https://zellij.dev/">Zellij</a> for more than a year. It was the logical step on Linux. The primary reason why I started with Zellij (and not tmux) was the simplicity.</p>
+<p>You can just start with</p>
+<pre><code class="language-sh">bash &lt;(curl -L https://zellij.dev/launch)
+</code></pre>
+<p>and then it teaches you how to navigate using keyboard shortcuts with the bottom bar. Amazing.</p>
+<h2 id="where-zellij-was-not-enough">Where zellij was not enough</h2>
+<p>I slowly integrated Zellij sessions into my daily workflow and it worked - almost flawlessly.</p>
+<p>But then I started working on projects where multiple Git repositories are needed and multiple branches need to be accessible.</p>
+<p>The branch issue is easily solvable with <a href="https://worktrunk.dev/">Worktrunk</a>. It takes away all the hard work when creating a new branch and a new worktree...
+I scripted the whole thing so that on ctrl+alt+n, Zellij asks for a worktree (branch) name and opens 4 tabs with nvim, lazygit, opencode and just a command line (in that specific worktree location). With that I have a fresh environment for the next feature, or I can review pull requests without disturbing the workflow...</p>
+<p>But these 4 tabs... are another 4 tabs in the limited space of the Zellij tab bar. And I also need to name them accordingly. So I usually use a convention with the branch's first 5 letters and <code>e</code> for nvim, <code>g</code> for lazygit, <code>c</code> for opencode and <code>t</code> for the terminal... Realistically, I could fit 3-4 of these &quot;workspaces&quot; on my screen (the one with no suffix is the base branch).</p>
+<p><img src="Content/Blog/2026-07-27_herdr_vs_zellij/media/20260724_213151.png" alt="" /></p>
+<p>3-4 is not enough and the navigation becomes quite cumbersome. So what can one do? Use Zellij sessions? Session management is not the best in Zellij, and even then, I want to be able to switch fast and have all the trees closer to my eyes. A session is not for that - one session means one project, not one worktree. It would mix the &quot;structure levels&quot;.
+Another solution could be stacked panes, but then I would have to have one tab per tree and stacked panes inside. Maybe workable, but not perfect.</p>
+<p>Then I was introduced to <a href="https://herdr.dev/">Herdr</a> and the sidebar piqued my curiosity - this is exactly what I need - or at least, I thought so.</p>
+<p>So I tried experimenting with it.</p>
+<h2 id="sidebar-clear-win-for-herdr">Sidebar - clear win for Herdr</h2>
+<p>I am a fullscreen person - I don't like panes in a multiplexer, and I don't like them in Hyprland. I want everything fullscreen. The sidebar breaks this, but I figured I am fine with that. It really gives you</p>
+<p><img src="Content/Blog/2026-07-27_herdr_vs_zellij/media/20260724_214655.png" alt="" /></p>
+<p>Four tabs, or it can be more - they are named simply (no suffix). This is something I was looking for.</p>
+<p>Then there is the agent integration. It is described as the main Herdr feature. I find it useful, but not something that would force me to switch the multiplexer.</p>
+<p>It is worth noting that there is a new <a href="https://github.com/marktoda/zj-radar">zj-radar</a> project that solves exactly that - a sidebar with agents included.</p>
+<h2 id="worktrees-integration-i-would-rather-keep-it-unix-style">Worktrees integration - I would rather keep it unix-style</h2>
+<p>Herdr has basic worktree creation/deletion integration - and it is not great. What I mainly dislike is the need to store the worktrees in a separate worktree folder. The best solution for me is to store the worktrees at the same level as the base repo: <code>Repos/my_cool_project</code> and <code>Repos/my_cool_project.some-new-feature</code>... That is exactly how <a href="https://worktrunk.dev/">Worktrunk</a> does it - and you can create hooks, etc. It does one job and it does it well. Fortunately, there is this <a href="https://github.com/devashish2203/herdr-worktrunk/">herdr-worktrunk extension</a> that replaces the default worktree management with the Worktrunk tool.</p>
+<p>In Zellij, the basic worktree operations were plain command scripting - in Herdr we need more because we have the sidebar.</p>
+<h2 id="images-herdr-has-them-now-zellij-has-not-for-3-years">Images - Herdr has them now, Zellij has not for 3 years</h2>
+<p><a href="https://github.com/zellij-org/zellij/issues/2814">This Zellij issue</a> is from September 2023 (with 300+ thumbs up). Herdr has the Kitty graphics protocol in experimental features - and it works.</p>
+<p>(Your terminal emulator has to support the protocol too - most terminal emulators do, but, for example, the fastest of them - foot - does not.)</p>
+<h2 id="shortcuts-both-can-be-configured-the-same-but-herdr-does-it-better">Shortcuts - both can be configured the same, but Herdr does it better</h2>
+<p>These are defaults - Zellij has different modes for tab operations (ctrl+t) and pane operations (ctrl+p), while Herdr has the tmux-style ctrl+b... I don't care much. The actions I use most of the time are remapped so they do not collide with the apps inside or the system, and I had no issues with either alternative.</p>
+<h2 id="floating-panes-zellij-does-it-right">Floating panes - Zellij does it right</h2>
+<p>It's one of the proclaimed Zellij features - floating panes as first-class citizens. You map it to a shortcut, and when you press it, the floating panes appear - you can have several of them, and each tab has a different stack of floating panes. When you press the shortcut again, all of them disappear. But when you run some task there, it is still running in the background.</p>
+<p><img src="Content/Blog/2026-07-27_herdr_vs_zellij/media/20260724_224330.png" alt="zellij floating pane" /></p>
+<p>Herdr supports floating panes from 7.4, but they are hit-and-go - you cannot put them into the background with a second key combination press. I had to find ways around it - it usually means creating another tab - and since the tab bar is not crowded thanks to the workspaces, I can afford it.... But still, I would welcome this feature in Herdr too.</p>
+<h2 id="scripting-the-ui-both-the-same-almost">Scripting the UI - both the same (almost)</h2>
+<p>You can create a named tab and run a command in both:</p>
+<pre><code class="language-sh">zellij action new-tab --name editor -- nvim
+pane_id=$(herdr tab create --label editor --focus | jq -r '.result.root_pane.pane_id'); herdr pane run &quot;$pane_id&quot; nvim
+</code></pre>
+<p>It was not possible in Zellij, but it is now. Herdr is based on that - you can even instruct the agent to create new tabs/panes to spawn new agents in them. I never use that, but a lot of people find it useful.</p>
+<h2 id="text-underlines-in-nvim-herdr-is-lacking">Text underlines in nvim - Herdr is lacking</h2>
+<p>It is <a href="https://github.com/ogulcancelik/herdr/issues/1178">this issue</a>, and it is quite a problem for me. Look at this C# code in nvim:</p>
+<p><img src="Content/Blog/2026-07-27_herdr_vs_zellij/media/20260724_222012.png" alt="zellij vs herdr on text decorations" /></p>
+<p>Herdr is on the left, Zellij is on the right - where the support for squiggly lines is proper. The red one under the exact error makes it visually obvious what is happening.</p>
+<h2 id="delete-direction-last-used-vs-left-direction">Delete direction - last used vs left direction</h2>
+<p>In Zellij, when you close a tab, you jump to the one that was used last (similarly to how Brave does it). In Herdr, you jump to the one on the left - similarly to how qutebrowser does it.</p>
+<p>I prefer the more deterministic one - but what I would prefer even more is a setting for this (also with the direction), which is not available in either multiplexer.</p>
+<h2 id="hard-to-reproduce-bugs-that-are-not-in-herdr">Hard-to-reproduce bugs (that are not in Herdr)</h2>
+<p>Sometimes in Zellij, when I create a new tab, it just freezes and I cannot jump to any other tabs - I didn't find out why exactly...
+Also, when creating a new tab, the location does not match the location of the tab where I was. Most of the time this happens when opening a floating pane. Not always, and I didn't find the cause or manage to reproduce it...</p>
+<p>In Herdr, I don't have these issues.</p>
+<h2 id="moving-tabs-in-herdr-just-with-the-mouse">Moving tabs - in Herdr just with the mouse (??)</h2>
+<p>In Zellij, you can move tabs using keyboard shortcuts. In Herdr there is no such option (<a href="https://github.com/ogulcancelik/herdr/discussions/771">the discussion</a>) - you can just drag and drop with the mouse, though. This is not such an issue when the tab count has decreased thanks to workspaces - but still, I would like to see this API in Herdr.
+You can do a lot of stuff with the mouse in Herdr - but honestly, I don't care about this one.</p>
+<h2 id="session-restoration-not-needed-anymore">Session restoration - not needed anymore</h2>
+<p>Herdr restores tab names and working directories, but it does not offer to rerun the previous commands. Zellij does - you can press Enter to rerun each detected command:</p>
+<p><img src="Content/Blog/2026-07-27_herdr_vs_zellij/media/20260724_225419.png" alt="" /></p>
+<p>But it is not always the best. The command detection is not perfect. For example, with opencode it often wants to start the LSP server used by opencode instead of opencode itself. I had the same issue with nvim. I found workarounds, but I don't miss this feature in Herdr. The restored tabs start with a command line and remember their names and locations. I created a script that reads the names and starts nvim for <code>e</code>, lazygit for <code>g</code>, opencode for <code>c</code>... This way I don't need to press Enter 3 times, and I can restore everything at once if I want to.</p>
+<h2 id="which-one-to-choose">Which one to choose?</h2>
+<p>Personally, I switched from Zellij to Herdr - it took me 2 afternoons to convert the workflow, and I like the Herdr experience so far more than Zellij. But it is mostly because of the sidebar, which is now also possible to use in Zellij (but I have not tested the extension that provides it). Time will tell.</p>
+</div>
+    <div class="mt-10 flex flex-wrap items-center justify-between gap-4"><a class="inline-flex items-center gap-2 rounded-full border border-accent-500/60 px-4 py-2 text-sm font-semibold text-accent-300 transition hover:border-accent-300 hover:text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/tesar.tech/tree/main/Content/Blog/2026-07-27_herdr_vs_zellij"><span>View on GitHub</span>
+          <span aria-hidden="true">↗</span></a><a class="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 transition hover:text-white" aria-label="Back to the home" href>
+        ← Back home
+      </a></div></section></article></main>
+
+    <footer class="border-t border-gray-800/80 pt-8 text-sm text-gray-400"><div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between"><div class="space-y-1"><p class="mono-label text-[0.7rem] text-gray-500">tesar.tech // </p></div>
+        <div class="flex items-center gap-4"><a class="text-accent-400  hover:text-accent-300" target="_blank" rel="noopener noreferrer" href="https://github.com/tesar-tech/" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
+          <a class="text-accent-400  hover:text-accent-300" target="_blank" rel="noopener noreferrer" href="https://x.com/tesar_tech" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="hover:text-primary-400 h-6 w-6 fill-current text-gray-200"><path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path></svg></a></div></div>
+      <div class="mt-6 flex flex-wrap items-center gap-2 text-xs text-gray-500"><span>© 2026</span>
+        <span>•</span>
+        <a class="text-accent-400  hover:text-accent-300 text-xs" target="_blank" rel="noopener noreferrer" href="https://github.com/blazorStatic/blazorStatic">Built with Blazor Static</a>
+        <span>•</span>
+        <span>ver. somehow stable</span></div></footer></div></div>
+        <blazor-focus-on-navigate selector="h1"></blazor-focus-on-navigate></body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/nix.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
+<script>hljs.highlightAll();</script></html>
