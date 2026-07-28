@@ -1,5 +1,4 @@
-﻿@using System.Globalization
-<article class="space-y-10">
+﻿<article class="space-y-10">
   <header class=" border-gray-900/80 bg-gray-950/40  text-center sm:p-10">
     <div class="flex flex-col gap-4">
       @if (Published != null)
@@ -7,9 +6,7 @@
         <dl class="flex flex-col items-center gap-2 text-gray-400">
           <dt class="sr-only">Published on</dt>
           <dd class="mono-label tracking-[0.3em]">
-            <time datetime="@Published.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffK", CultureInfo.InvariantCulture)">
-              @Published.Value.ToString("MMM d, yyyy", new CultureInfo("en-US"))
-            </time>
+            <DateRow Published="Published.Value" Updated="Updated" />
           </dd>
         </dl>
       }
@@ -72,6 +69,7 @@
   [Parameter] public IEnumerable<string>? Tags { get; set; }
   [Parameter] public string? TagsPageUrl { get; set; }
   [Parameter] public DateTime? Published { get; set; }
+  [Parameter] public DateTime? Updated { get; set; }
   [Parameter] public RenderFragment? Authors { get; set; }
   [Parameter] public RenderFragment? ArticleTail { get; set; }
 }

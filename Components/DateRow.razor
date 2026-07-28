@@ -1,0 +1,15 @@
+@using System.Globalization
+
+@Date(Published)
+@if (Updated is { } updated)
+{
+    <span class="normal-case! tracking-normal! text-gray-500">&nbsp;(updated: @Date(updated))</span>
+}
+
+@code {
+    [Parameter, EditorRequired] public DateTime Published { get; set; }
+    [Parameter] public DateTime? Updated { get; set; }
+
+    private RenderFragment Date(DateTime date) => @<time
+        datetime="@date.ToString("yyyy-MM-ddTHH:mm:ss.fffK", CultureInfo.InvariantCulture)">@date.ToString("MMM d, yyyy", CultureInfo.GetCultureInfo("en-US"))</time>;
+}
